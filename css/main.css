@@ -1,0 +1,125 @@
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #888;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+html, body{
+	margin : 0;
+	background: #2e325a;/*#243840; #f1f1f1;*/
+}
+h3{
+	padding: 5px 15px;
+	font-size : large;
+	font-family : "Open Sans", sans-serif;
+	color : #fff;
+	margin : 10px;
+}
+.header{
+	padding : 5px 2%;
+	background : #25294a;
+}
+.header a{
+	text-decoration: none;
+    	display: inline-block;
+}
+.container{
+	width : 100%;
+	/*padding: 10px 0;
+	text-align: center;*/
+}
+.inner-container{ 
+	/*display: inline-block; */
+}
+.menu{
+	width : 15%;
+	display : inline-block;
+	vertical-align: top;
+	font-family : "Open Sans", sans-serif;
+	/*box-shadow : inset -1px -2px 1px 0.1px #e2e2e2;*/
+}
+
+.menu-inner{
+	padding : 0 0 15px;
+}
+.menu-header{
+	color : #fff;
+	width : 95%;
+	padding : 10px 0 10px 5%;
+	background: #292d52;/*#f1f1f1;*/
+	border : 1px solid #25294a;
+}
+.menu-option{
+	color : #cdcdcd;
+	padding : 5px 0 5px 5%;
+	font-size : small;
+	width : 95%;
+	display : inline-block;
+	text-decoration : none;
+	border-bottom: 1px solid #25294a;
+        border-right: 1px solid #25294a;
+}
+.menu-option:hover{
+	text-decoration : underline;
+}
+.graph{
+	width : 84%;
+	display : inline-block;
+	text-align: center;
+	/*background: #fff;*/
+    	padding: 20px 0 50px;
+}
+.graph-header{
+	padding: 0 0 20px 60px;
+    	text-align: left;
+}
+.graph-header a{
+	color: white;
+    text-decoration: none;
+	font-family: "Open Sans", sans-serif;
+}
+.graph-header a:hover{
+    text-decoration: underline;
+}
+.inner-graph{
+	display : inline-block;
+	background : #ffffff;
+	text-align: center;
+	box-shadow: 1px 15px 25px 10px #181a2f;
+    border: 1px solid #ddd;
+}
+.graph-sync{
+	display: inline-grid;
+    box-shadow: 1px 15px 25px 10px #181a2f;
+}
+.inner-graph-sync{
+	display : inline-block;
+	background : #ffffff;
+	text-align: center;
+}
+.graph svg{
+	cursor : crosshair;
+}
+.btn-div{
+	width: 100%;
+	padding : 15px 0;
+	text-align: center;
+	display : none;
+}
+.btn{
+	padding: 5px 25px;
+    background: #008ffb;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+   
+}
+.btn:hover{
+	box-shadow: 1px 1px 8px 8px #008ffb40;
+}
