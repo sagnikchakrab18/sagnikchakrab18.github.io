@@ -1,0 +1,2063 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> 
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" href="css/main.css" />
+	<script src="js/raphael.js"></script>
+	<script src="js/line.js"></script>	
+	<style type="text/css">
+		.header{
+			box-shadow: 1px 15px 25px 10px #1c203a;
+		}
+		.header-inner{
+			padding : 30px 0;
+			text-align : center;
+			color : #fff;
+			font-family : "Open Sans", sans-serif;
+		}
+		.inner-container{
+			padding : 10px 0 30px 0;
+			
+		}
+		.inner-container-div{
+			text-align : center;
+		}
+		
+		.inner-container-div-item{ 
+			/*width : 31%;*/
+			height : auto;
+			display : inline-block;
+			padding : 20px 1%;
+		}
+		.inner-container-div-item-inner{
+			background: #fdfdfd;
+			border-radius: 5px 5px 0px 0px;
+			display: inline-block;
+			width: 100%;
+			padding: 10px 0 0;
+			box-shadow: 0px 10px 10px 1px #181a2f;
+		}
+		.inner-container-div-item-inner:hover{
+			box-shadow: 0px 15px 25px 10px #181a2f;
+		}
+		.inner-container-div-item-inner-footer{
+			padding : 10px 0;
+			background : #dedede;
+			text-align : center;
+		}
+		.inner-container-div-item-inner-footer p{
+			font-family : "Open Sans", sans-serif;
+			font-size : medium;
+			margin : 0;
+			color : #25294a;
+			font-weight: bolder
+		}
+		.inner-container-topic{
+			padding : 15px 1%;
+			width : 98%
+		}
+		.inner-container-topic-inner{
+			width : 100%
+		}
+		.inner-container-topic-inner h2{
+			box-shadow: 0px 7px 12px 3px #25294a;
+			color: #dce0ff;
+			background: #2e325a;
+			margin: 0;
+			font-family: "Open Sans", sans-serif;
+			padding: 10px 50px;
+		}
+		.github-icon{
+			position : absolute;
+			top : 0;
+			right : 0;
+		}
+	</style>			
+    </head>
+    <body>
+		
+	<div class="header">
+		<div class="header-inner">
+			<h1>JAVASCRIPT CHART DEMOS</h1>
+			<p>
+				Explore the sample JavaScript charts created to show some of the enticing features packed.<br>
+				All examples here are included with source code to save your development time.
+			</p>
+		</div>
+	</div>
+	<div class="container">
+		<div class="inner-container">
+			<div class="inner-container-topic">
+				<div class="inner-container-topic-inner">
+					<h2>Line Chart</h2>
+				</div>
+			</div>
+			<a href="https://github.com/sagnikchakrab18" target="_blank">
+				<div class="github-icon">
+					<svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true">
+					<path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z" fill="#007c00"></path>
+					<path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="#fff" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+					<path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="#fff" class="octo-body"></path></svg>
+				</div>
+			</a>
+			<div class="inner-container-div">
+				<a href="line_basic.html">
+					<div class="inner-container-div-item">	
+						<div class="inner-container-div-item-inner">
+							<div  id="l_cntnr1"></div>
+							<div class="inner-container-div-item-inner-footer">
+								<p>Basic Line chart</p>
+							</div>
+						</div>
+					</div>
+				</a>
+				<a href="line_round.html">
+					<div class="inner-container-div-item">	
+						<div class="inner-container-div-item-inner">
+							<div id="l_cntnr2"></div>
+							<div class="inner-container-div-item-inner-footer">
+								<p>Round Line chart</p>
+							</div>
+						</div>
+					</div>
+				</a>
+				<a href="line_zoomable.html">
+					<div class="inner-container-div-item">	
+						<div class="inner-container-div-item-inner">
+							<div id="l_cntnr3"></div>
+							<div class="inner-container-div-item-inner-footer">
+								<p>Zoomable Line chart</p>
+							</div>
+						</div>
+					</div>
+				</a>
+				<a href="line_stepline.html">
+					<div class="inner-container-div-item">	
+						<div class="inner-container-div-item-inner">
+							<div id="l_cntnr4"></div>
+							<div class="inner-container-div-item-inner-footer">
+								<p>Stepline chart</p>
+							</div>
+						</div>
+					</div>
+				</a>
+				<a href="line_negative.html">
+					<div class="inner-container-div-item">	
+						<div class="inner-container-div-item-inner">
+							<div id="l_cntnr9"></div>
+							<div class="inner-container-div-item-inner-footer">
+								<p>Line chart with Negative value</p>
+							</div>
+						</div>
+					</div>
+				</a>
+				<a href="line_multiple.html">
+					<div class="inner-container-div-item">	
+						<div class="inner-container-div-item-inner">
+							<div id="l_cntnr5"></div>
+							<div class="inner-container-div-item-inner-footer">
+								<p>Multiple Line chart with Data labels</p>
+							</div>
+						</div>
+					</div>
+				</a>
+				<a href="line_annotation.html">
+					<div class="inner-container-div-item">	
+						<div class="inner-container-div-item-inner">
+							<div id="l_cntnr6"></div>
+							<div class="inner-container-div-item-inner-footer">
+								<p>Line annotation chart</p>
+							</div>
+						</div>
+					</div>
+				</a>
+				<a href="line_annotation_min_max.html">
+					<div class="inner-container-div-item">	
+						<div class="inner-container-div-item-inner">
+							<div id="l_cntnr7"></div>
+							<div class="inner-container-div-item-inner-footer">
+								<p>Line annotation min max chart</p>
+							</div>
+						</div>
+					</div>
+				</a>
+				<a href="line_syncing.html">
+					<div class="inner-container-div-item">	
+						<div class="inner-container-div-item-inner">
+							<div id="l_cntnr8_1"></div>
+							<div id="l_cntnr8_2"></div>
+							<div id="l_cntnr8_3"></div>
+							<div class="inner-container-div-item-inner-footer">
+								<p>Line Syncing chart</p>
+							</div>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+		<div class="inner-container">
+			<div class="inner-container-topic">
+				<div class="inner-container-topic-inner">
+					<h2>Area Chart</h2>
+				</div>
+			</div>
+			<div class="inner-container-div">
+				<a href="area_basic.html">
+					<div class="inner-container-div-item">	
+						<div class="inner-container-div-item-inner">
+							<div  id="a_cntnr1"></div>
+							<div class="inner-container-div-item-inner-footer">
+								<p>Basic Area chart</p>
+							</div>
+						</div>
+					</div>
+				</a>
+				<a href="area_round.html">
+					<div class="inner-container-div-item">	
+						<div class="inner-container-div-item-inner">
+							<div id="a_cntnr2"></div>
+							<div class="inner-container-div-item-inner-footer">
+								<p>Round Area chart</p>
+							</div>
+						</div>
+					</div>
+				</a>
+				<a href="area_zoomable.html">
+					<div class="inner-container-div-item">	
+						<div class="inner-container-div-item-inner">
+							<div id="a_cntnr3"></div>
+							<div class="inner-container-div-item-inner-footer">
+								<p>Zoomable Area chart</p>
+							</div>
+						</div>
+					</div>
+				</a>
+				<a href="area_stepline.html">
+					<div class="inner-container-div-item">	
+						<div class="inner-container-div-item-inner">
+							<div id="a_cntnr4"></div>
+							<div class="inner-container-div-item-inner-footer">
+								<p>Stepline Area chart</p>
+							</div>
+						</div>
+					</div>
+				</a>
+				<a href="area_negative.html">
+					<div class="inner-container-div-item">	
+						<div class="inner-container-div-item-inner">
+							<div id="a_cntnr9"></div>
+							<div class="inner-container-div-item-inner-footer">
+								<p>Area chart with Negative value</p>
+							</div>
+						</div>
+					</div>
+				</a>
+				<a href="area_multiple.html">
+					<div class="inner-container-div-item">	
+						<div class="inner-container-div-item-inner">
+							<div id="a_cntnr5"></div>
+							<div class="inner-container-div-item-inner-footer">
+								<p>Multiple Area chart with Data labels</p>
+							</div>
+						</div>
+					</div>
+				</a>
+				<a href="area_annotation.html">
+					<div class="inner-container-div-item">	
+						<div class="inner-container-div-item-inner">
+							<div id="a_cntnr6"></div>
+							<div class="inner-container-div-item-inner-footer">
+								<p>Area annotation chart</p>
+							</div>
+						</div>
+					</div>
+				</a>
+				<a href="area_annotation_min_max.html">
+					<div class="inner-container-div-item">	
+						<div class="inner-container-div-item-inner">
+							<div id="a_cntnr7"></div>
+							<div class="inner-container-div-item-inner-footer">
+								<p>Area annotation min max chart</p>
+							</div>
+						</div>
+					</div>
+				</a>
+				<a href="area_syncing.html">
+					<div class="inner-container-div-item">	
+						<div class="inner-container-div-item-inner">
+							<div id="a_cntnr8_1"></div>
+							<div id="a_cntnr8_2"></div>
+							<div id="a_cntnr8_3"></div>
+							<div class="inner-container-div-item-inner-footer">
+								<p>Area Syncing chart</p>
+							</div>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+		<div class="inner-container">
+			<div class="inner-container-topic">
+				<div class="inner-container-topic-inner">
+					<h2>Mixed Chart</h2>
+				</div>
+			</div>
+			<div class="inner-container-div">
+				<a href="mixed_line.html">
+					<div class="inner-container-div-item">	
+						<div class="inner-container-div-item-inner">
+							<div  id="m_cntnr1"></div>
+							<div class="inner-container-div-item-inner-footer">
+								<p>Line Mixed chart</p>
+							</div>
+						</div>
+					</div>
+				</a>
+				<a href="mixed_area.html">
+					<div class="inner-container-div-item">	
+						<div class="inner-container-div-item-inner">
+							<div id="m_cntnr2"></div>
+							<div class="inner-container-div-item-inner-footer">
+								<p>Area Mixed chart</p>
+							</div>
+						</div>
+					</div>
+				</a>
+				<a href="mixed_line_area_circle.html">
+					<div class="inner-container-div-item">	
+						<div class="inner-container-div-item-inner">
+							<div id="m_cntnr3"></div>
+							<div class="inner-container-div-item-inner-footer">
+								<p>Line, Area & Circle Mixed chart</p>
+							</div>
+						</div>
+					</div>
+				</a>
+				<a href="mixed_syncing.html">
+					<div class="inner-container-div-item">	
+						<div class="inner-container-div-item-inner">
+							<div id="m_cntnr8_1"></div>
+							<div id="m_cntnr8_2"></div>
+							<div id="m_cntnr8_3"></div>
+							<div class="inner-container-div-item-inner-footer">
+								<p>Mixed Syncing chart</p>
+							</div>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+	<script>
+		window.onload = function(){		
+			///////////////////////////     1    ///////////////////////////
+			var l_data1 = [{ month : 'JAN', value : { a : 50, } },{ month : 'FEB', value : { a : 71, } },{ month : 'MAR', value : { a : 110, } },{ month : 'APR', value : { a : 102, } },{ month : 'MAY', value : { a : 133, } },{ month : 'JUN', value : { a : 152, } },{ month : 'JUL', value : { a : 129, } },{ month : 'AUG', value : { a : 155, } },{ month : 'SEP', value : { a : 165, } },{ month : 'OCT', value : { a : 194, } },{ month : 'NOV', value : { a : 201, } },{ month : 'DEC', value : { a : 261, } }
+			];
+			var l_instruction1 = {
+				id : "1st",
+				container : "l_cntnr1",
+				type : "tiny",
+				title : "Product Trends by Month",
+				width : 0,
+				height : 0,
+				paddingx : 0,
+				paddingy : 0,
+				axis_color : "#0e66a9",
+				x_axis_name : "Month",
+				y_axis_name : "",
+				x_division_no : "5",//"" means Number of data
+				y_division_no : "8",//"" means Number of data
+				path_no : 1,
+				main_title : false,
+				icon : false,
+				x_axis : false,
+				x_axis_division : false,
+				x_axis_title : false,
+				x_axis_label : false,
+				y_axis : false,
+				y_axis_division : true,
+				y_axis_title : true,
+				y_axis_label : false,
+				x_axis_hover_design : false,
+				y_axis_hover_design : false,
+				popup_design : false,
+				popup_footer_design : false,
+				select_area : false,
+			};
+			l_path_detail1 = [{
+				name : "Laptop",
+				color : "#0e66a9",
+				type : ["line_path"],
+				stroke : [3],
+				circle : true,
+				circle_zoom_out : 0,
+				circle_zoom_in : 3,
+				label : false,
+			}];			
+			check(l_data1, l_instruction1, l_path_detail1);	
+			
+			///////////////////////////     2    ///////////////////////////
+			var l_data2 = [
+				{ month : '1 ,JAN', value : { a : 13, } },{ month : '2 ,JAN', value : { a : 24, } },{ month : '3 ,JAN', value : { a : 34, } },{ month : '4 ,JAN', value : { a : 15, } },{ month : '5 ,JAN', value : { a : 38, } },{ month : '6 ,JAN', value : { a : 34, } },{ month : '7 ,JAN', value : { a : 42, } },{ month : '8 ,JAN', value : { a : 25, } },{ month : '9 ,JAN', value : { a : 31, } },{ month : '10 ,JAN', value : { a : 22, } },{ month : '11 ,JAN', value : { a : 39, } },{ month : '12 ,JAN', value : { a : 26, } },{ month : '13 ,JAN', value : { a : 29, } },{ month : '14 ,JAN', value : { a : 30, } },{ month : '15 ,JAN', value : { a : 11, } },{ month : '16 ,JAN', value : { a : 5, } },{ month : '17 ,JAN', value : { a : 19, } },{ month : '18 ,JAN', value : { a : 13, } },
+			];
+			var l_instruction2 = {
+				id : "2nd",
+				container : "l_cntnr2",
+				type : "tiny",
+				title : "Product Trends by Month",
+				width : 0,
+				height : 0,
+				paddingx : 0,
+				paddingy : 0,
+				axis_color : "#0e66a9",
+				x_axis_name : "Month",
+				y_axis_name : "",
+				x_division_no : "12",//"" means Number of data
+				y_division_no : "8",//"" means Number of data
+				path_no : 1,
+				main_title : false,
+				icon : false,
+				x_axis : false,
+				x_axis_division : false,
+				x_axis_title : false,
+				x_axis_label : false,
+				y_axis : false,
+				y_axis_division : true,
+				y_axis_title : true,
+				y_axis_label : false,
+				x_axis_hover_design : false,
+				y_axis_hover_design : false,
+				popup_design : false,
+				popup_footer_design : false,
+				select_area : false,
+			};
+			l_path_detail2 = [{
+				name : "Laptop",
+				color : "#770069",
+				type : ["round_path"],
+				stroke : [3],
+				circle : true,
+				circle_zoom_out : 2,
+				circle_zoom_in : 3,
+				label : false,
+			}];			
+			check(l_data2, l_instruction2, l_path_detail2);	
+			
+			///////////////////////////     3    ///////////////////////////
+			var l_data3 = [
+				{ month : '1 ,JAN', value : { a : 40, } },{ month : '2 ,JAN', value : { a : 31, } },{ month : '3 ,JAN', value : { a : 49, } },{ month : '4 ,JAN', value : { a : 34, } },{ month : '5 ,JAN', value : { a : 40, } },{ month : '6 ,JAN', value : { a : 31, } },{ month : '7 ,JAN', value : { a : 38, } },{ month : '8 ,JAN', value : { a : 49, } },{ month : '9 ,JAN', value : { a : 46, } },{ month : '10 ,JAN', value : { a : 41, } },{ month : '11 ,JAN', value : { a : 46, } },{ month : '12 ,JAN', value : { a : 48, } },{ month : '13 ,JAN', value : { a : 31, } },{ month : '14 ,JAN', value : { a : 48, } },{ month : '15 ,JAN', value : { a : 40, } },{ month : '16 ,JAN', value : { a : 43, } },{ month : '17 ,JAN', value : { a : 47, } },{ month : '18 ,JAN', value : { a : 31, } },{ month : '19 ,JAN', value : { a : 43, } },{ month : '20 ,JAN', value : { a : 40, } },{ month : '21 ,JAN', value : { a : 42, } },{ month : '22 ,JAN', value : { a : 38, } },{ month : '23 ,JAN', value : { a : 36, } },{ month : '24 ,JAN', value : { a : 39, } },{ month : '25 ,JAN', value : { a : 36, } },{ month : '26 ,JAN', value : { a : 33, } },{ month : '27 ,JAN', value : { a : 45, } },{ month : '28 ,JAN', value : { a : 49, } },{ month : '29 ,JAN', value : { a : 47, } },{ month : '30 ,JAN', value : { a : 48, } },{ month : '31 ,JAN', value : { a : 42, } },{ month : '1 ,FEB', value : { a : 59, } },{ month : '2 ,FEB', value : { a : 57, } },{ month : '3 ,FEB', value : { a : 50, } },{ month : '4 ,FEB', value : { a : 66, } },{ month : '5 ,FEB', value : { a : 67, } },{ month : '6 ,FEB', value : { a : 67, } },{ month : '7 ,FEB', value : { a : 63, } },{ month : '8 ,FEB', value : { a : 50, } },{ month : '9 ,FEB', value : { a : 63, } },{ month : '10 ,FEB', value : { a : 61, } },{ month : '11 ,FEB', value : { a : 62, } },{ month : '12 ,FEB', value : { a : 54, } },{ month : '13 ,FEB', value : { a : 61, } },{ month : '14 ,FEB', value : { a : 66, } },{ month : '15 ,FEB', value : { a : 53, } },{ month : '16 ,FEB', value : { a : 69, } },{ month : '17 ,FEB', value : { a : 69, } },{ month : '18 ,FEB', value : { a : 68, } },{ month : '19 ,FEB', value : { a : 59, } },{ month : '20 ,FEB', value : { a : 53, } },{ month : '21 ,FEB', value : { a : 66, } },{ month : '22 ,FEB', value : { a : 52, } },{ month : '23 ,FEB', value : { a : 64, } },{ month : '24 ,FEB', value : { a : 51, } },{ month : '25 ,FEB', value : { a : 51, } },{ month : '26 ,FEB', value : { a : 70, } },{ month : '27 ,FEB', value : { a : 68, } },{ month : '28 ,FEB', value : { a : 60, } },{ month : '1 ,MAR', value : { a : 97, } },{ month : '2 ,MAR', value : { a : 94, } },{ month : '3 ,MAR', value : { a : 93, } },{ month : '4 ,MAR', value : { a : 99, } },{ month : '5 ,MAR', value : { a : 87, } },{ month : '6 ,MAR', value : { a : 82, } },{ month : '7 ,MAR', value : { a : 98, } },{ month : '8 ,MAR', value : { a : 80, } },{ month : '9 ,MAR', value : { a : 90, } },{ month : '10 ,MAR', value : { a : 86, } },{ month : '11 ,MAR', value : { a : 92, } },{ month : '12 ,MAR', value : { a : 92, } },{ month : '13 ,MAR', value : { a : 86, } },{ month : '14 ,MAR', value : { a : 87, } },{ month : '15 ,MAR', value : { a : 100, } },{ month : '16 ,MAR', value : { a : 100, } },{ month : '17 ,MAR', value : { a : 81, } },{ month : '18 ,MAR', value : { a : 94, } },{ month : '19 ,MAR', value : { a : 82, } },{ month : '20 ,MAR', value : { a : 81, } },{ month : '21 ,MAR', value : { a : 99, } },{ month : '22 ,MAR', value : { a : 92, } },{ month : '23 ,MAR', value : { a : 83, } },{ month : '24 ,MAR', value : { a : 95, } },{ month : '25 ,MAR', value : { a : 93, } },{ month : '26 ,MAR', value : { a : 86, } },{ month : '27 ,MAR', value : { a : 89, } },{ month : '28 ,MAR', value : { a : 87, } },{ month : '29 ,MAR', value : { a : 92, } },{ month : '30 ,MAR', value : { a : 85, } },{ month : '31 ,MAR', value : { a : 87, } },{ month : '1 ,APR', value : { a : 99, } },{ month : '2 ,APR', value : { a : 93, } },{ month : '3 ,APR', value : { a : 101, } },{ month : '4 ,APR', value : { a : 102, } },{ month : '5 ,APR', value : { a : 98, } },{ month : '6 ,APR', value : { a : 97, } },{ month : '7 ,APR', value : { a : 104, } },{ month : '8 ,APR', value : { a : 92, } },{ month : '9 ,APR', value : { a : 105, } },{ month : '10 ,APR', value : { a : 102, } },{ month : '11 ,APR', value : { a : 91, } },{ month : '12 ,APR', value : { a : 98, } },{ month : '13 ,APR', value : { a : 101, } },{ month : '14 ,APR', value : { a : 99, } },{ month : '15 ,APR', value : { a : 90, } },{ month : '16 ,APR', value : { a : 104, } },{ month : '17 ,APR', value : { a : 93, } },{ month : '18 ,APR', value : { a : 97, } },{ month : '19 ,APR', value : { a : 103, } },{ month : '20 ,APR', value : { a : 91, } },{ month : '21 ,APR', value : { a : 96, } },{ month : '22 ,APR', value : { a : 96, } },{ month : '23 ,APR', value : { a : 98, } },{ month : '24 ,APR', value : { a : 101, } },{ month : '25 ,APR', value : { a : 93, } },{ month : '26 ,APR', value : { a : 100, } },{ month : '27 ,APR', value : { a : 94, } },{ month : '28 ,APR', value : { a : 97, } },{ month : '29 ,APR', value : { a : 101, } },{ month : '30 ,APR', value : { a : 95, } },{ month : '1 ,MAY', value : { a : 110, } },{ month : '2 ,MAY', value : { a : 107, } },{ month : '3 ,MAY', value : { a : 105, } },{ month : '4 ,MAY', value : { a : 112, } },{ month : '5 ,MAY', value : { a : 109, } },{ month : '6 ,MAY', value : { a : 108, } },{ month : '7 ,MAY', value : { a : 115, } },{ month : '8 ,MAY', value : { a : 114, } },{ month : '9 ,MAY', value : { a : 109, } },{ month : '10 ,MAY', value : { a : 109, } },{ month : '11 ,MAY', value : { a : 111, } },{ month : '12 ,MAY', value : { a : 115, } },{ month : '13 ,MAY', value : { a : 115, } },{ month : '14 ,MAY', value : { a : 110, } },{ month : '15 ,MAY', value : { a : 108, } },{ month : '16 ,MAY', value : { a : 110, } },{ month : '17 ,MAY', value : { a : 109, } },{ month : '18 ,MAY', value : { a : 106, } },{ month : '19 ,MAY', value : { a : 109, } },{ month : '20 ,MAY', value : { a : 115, } },{ month : '21 ,MAY', value : { a : 102, } },{ month : '22 ,MAY', value : { a : 106, } },{ month : '23 ,MAY', value : { a : 110, } },{ month : '24 ,MAY', value : { a : 114, } },{ month : '25 ,MAY', value : { a : 110, } },{ month : '26 ,MAY', value : { a : 106, } },{ month : '27 ,MAY', value : { a : 112, } },{ month : '28 ,MAY', value : { a : 106, } },{ month : '29 ,MAY', value : { a : 114, } },{ month : '30 ,MAY', value : { a : 108, } },{ month : '31 ,MAY', value : { a : 109, } },{ month : '1 ,JUN', value : { a : 112, } },{ month : '2 ,JUN', value : { a : 122, } },{ month : '3 ,JUN', value : { a : 125, } },{ month : '4 ,JUN', value : { a : 112, } },{ month : '5 ,JUN', value : { a : 119, } },{ month : '6 ,JUN', value : { a : 118, } },{ month : '7 ,JUN', value : { a : 126, } },{ month : '8 ,JUN', value : { a : 126, } },{ month : '9 ,JUN', value : { a : 128, } },{ month : '10 ,JUN', value : { a : 120, } },{ month : '11 ,JUN', value : { a : 124, } },{ month : '12 ,JUN', value : { a : 119, } },{ month : '13 ,JUN', value : { a : 111, } },{ month : '14 ,JUN', value : { a : 123, } },{ month : '15 ,JUN', value : { a : 125, } },{ month : '16 ,JUN', value : { a : 116, } },{ month : '17 ,JUN', value : { a : 129, } },{ month : '18 ,JUN', value : { a : 128, } },{ month : '19 ,JUN', value : { a : 114, } },{ month : '20 ,JUN', value : { a : 117, } },{ month : '21 ,JUN', value : { a : 120, } },{ month : '22 ,JUN', value : { a : 123, } },{ month : '23 ,JUN', value : { a : 119, } },{ month : '24 ,JUN', value : { a : 130, } },{ month : '25 ,JUN', value : { a : 123, } },{ month : '26 ,JUN', value : { a : 116, } },{ month : '27 ,JUN', value : { a : 127, } },{ month : '28 ,JUN', value : { a : 116, } },{ month : '29 ,JUN', value : { a : 117, } },{ month : '30 ,JUN', value : { a : 112, } },{ month : '1 ,JUL', value : { a : 97, } },{ month : '2 ,JUL', value : { a : 107, } },{ month : '3 ,JUL', value : { a : 105, } },{ month : '4 ,JUL', value : { a : 118, } },{ month : '5 ,JUL', value : { a : 115, } },{ month : '6 ,JUL', value : { a : 101, } },{ month : '7 ,JUL', value : { a : 117, } },{ month : '8 ,JUL', value : { a : 98, } },{ month : '9 ,JUL', value : { a : 117, } },{ month : '10 ,JUL', value : { a : 99, } },{ month : '11 ,JUL', value : { a : 104, } },{ month : '12 ,JUL', value : { a : 98, } },{ month : '13 ,JUL', value : { a : 117, } },{ month : '14 ,JUL', value : { a : 114, } },{ month : '15 ,JUL', value : { a : 115, } },{ month : '16 ,JUL', value : { a : 102, } },{ month : '17 ,JUL', value : { a : 99, } },{ month : '18 ,JUL', value : { a : 97, } },{ month : '19 ,JUL', value : { a : 112, } },{ month : '20 ,JUL', value : { a : 107, } },{ month : '21 ,JUL', value : { a : 106, } },{ month : '22 ,JUL', value : { a : 117, } },{ month : '23 ,JUL', value : { a : 106, } },{ month : '24 ,JUL', value : { a : 109, } },{ month : '25 ,JUL', value : { a : 101, } },{ month : '26 ,JUL', value : { a : 109, } },{ month : '27 ,JUL', value : { a : 106, } },{ month : '28 ,JUL', value : { a : 105, } },{ month : '29 ,JUL', value : { a : 117, } },{ month : '30 ,JUL', value : { a : 105, } },{ month : '31 ,JUL', value : { a : 119, } },{ month : '1 ,AUG', value : { a : 127, } },{ month : '2 ,AUG', value : { a : 113, } },{ month : '3 ,AUG', value : { a : 122, } },{ month : '4 ,AUG', value : { a : 133, } },{ month : '5 ,AUG', value : { a : 134, } },{ month : '6 ,AUG', value : { a : 134, } },{ month : '7 ,AUG', value : { a : 120, } },{ month : '8 ,AUG', value : { a : 131, } },{ month : '9 ,AUG', value : { a : 124, } },{ month : '10 ,AUG', value : { a : 116, } },{ month : '11 ,AUG', value : { a : 111, } },{ month : '12 ,AUG', value : { a : 122, } },{ month : '13 ,AUG', value : { a : 115, } },{ month : '14 ,AUG', value : { a : 124, } },{ month : '15 ,AUG', value : { a : 126, } },{ month : '16 ,AUG', value : { a : 128, } },{ month : '17 ,AUG', value : { a : 131, } },{ month : '18 ,AUG', value : { a : 133, } },{ month : '19 ,AUG', value : { a : 111, } },{ month : '20 ,AUG', value : { a : 131, } },{ month : '21 ,AUG', value : { a : 132, } },{ month : '22 ,AUG', value : { a : 126, } },{ month : '23 ,AUG', value : { a : 126, } },{ month : '24 ,AUG', value : { a : 117, } },{ month : '25 ,AUG', value : { a : 132, } },{ month : '26 ,AUG', value : { a : 132, } },{ month : '27 ,AUG', value : { a : 111, } },{ month : '28 ,AUG', value : { a : 126, } },{ month : '29 ,AUG', value : { a : 133, } },{ month : '30 ,AUG', value : { a : 113, } },{ month : '31 ,AUG', value : { a : 121, } },{ month : '1 ,SEP', value : { a : 141, } },{ month : '2 ,SEP', value : { a : 135, } },{ month : '3 ,SEP', value : { a : 134, } },{ month : '4 ,SEP', value : { a : 128, } },{ month : '5 ,SEP', value : { a : 139, } },{ month : '6 ,SEP', value : { a : 133, } },{ month : '7 ,SEP', value : { a : 139, } },{ month : '8 ,SEP', value : { a : 133, } },{ month : '9 ,SEP', value : { a : 142, } },{ month : '10 ,SEP', value : { a : 128, } },{ month : '11 ,SEP', value : { a : 144, } },{ month : '12 ,SEP', value : { a : 137, } },{ month : '13 ,SEP', value : { a : 131, } },{ month : '14 ,SEP', value : { a : 136, } },{ month : '15 ,SEP', value : { a : 143, } },{ month : '16 ,SEP', value : { a : 141, } },{ month : '17 ,SEP', value : { a : 139, } },{ month : '18 ,SEP', value : { a : 134, } },{ month : '19 ,SEP', value : { a : 143, } },{ month : '20 ,SEP', value : { a : 127, } },{ month : '21 ,SEP', value : { a : 130, } },{ month : '22 ,SEP', value : { a : 142, } },{ month : '23 ,SEP', value : { a : 142, } },{ month : '24 ,SEP', value : { a : 137, } },{ month : '25 ,SEP', value : { a : 129, } },{ month : '26 ,SEP', value : { a : 136, } },{ month : '27 ,SEP', value : { a : 134, } },{ month : '28 ,SEP', value : { a : 143, } },{ month : '29 ,SEP', value : { a : 125, } },{ month : '30 ,SEP', value : { a : 133, } },{ month : '1 ,OCT', value : { a : 116, } },{ month : '2 ,OCT', value : { a : 118, } },{ month : '3 ,OCT', value : { a : 109, } },{ month : '4 ,OCT', value : { a : 117, } },{ month : '5 ,OCT', value : { a : 121, } },{ month : '6 ,OCT', value : { a : 105, } },{ month : '7 ,OCT', value : { a : 100, } },{ month : '8 ,OCT', value : { a : 115, } },{ month : '9 ,OCT', value : { a : 101, } },{ month : '10 ,OCT', value : { a : 112, } },{ month : '11 ,OCT', value : { a : 113, } },{ month : '12 ,OCT', value : { a : 108, } },{ month : '13 ,OCT', value : { a : 118, } },{ month : '14 ,OCT', value : { a : 115, } },{ month : '15 ,OCT', value : { a : 120, } },{ month : '16 ,OCT', value : { a : 111, } },{ month : '17 ,OCT', value : { a : 117, } },{ month : '18 ,OCT', value : { a : 103, } },{ month : '19 ,OCT', value : { a : 117, } },{ month : '20 ,OCT', value : { a : 110, } },{ month : '21 ,OCT', value : { a : 123, } },{ month : '22 ,OCT', value : { a : 121, } },{ month : '23 ,OCT', value : { a : 109, } },{ month : '24 ,OCT', value : { a : 112, } },{ month : '25 ,OCT', value : { a : 105, } },{ month : '26 ,OCT', value : { a : 115, } },{ month : '27 ,OCT', value : { a : 105, } },{ month : '28 ,OCT', value : { a : 104, } },{ month : '29 ,OCT', value : { a : 102, } },{ month : '30 ,OCT', value : { a : 120, } },{ month : '31 ,OCT', value : { a : 111, } },{ month : '1 ,NOV', value : { a : 95, } },{ month : '2 ,NOV', value : { a : 86, } },{ month : '3 ,NOV', value : { a : 88, } },{ month : '4 ,NOV', value : { a : 100, } },{ month : '5 ,NOV', value : { a : 88, } },{ month : '6 ,NOV', value : { a : 96, } },{ month : '7 ,NOV', value : { a : 91, } },{ month : '8 ,NOV', value : { a : 98, } },{ month : '9 ,NOV', value : { a : 89, } },{ month : '10 ,NOV', value : { a : 103, } },{ month : '11 ,NOV', value : { a : 86, } },{ month : '12 ,NOV', value : { a : 106, } },{ month : '13 ,NOV', value : { a : 106, } },{ month : '14 ,NOV', value : { a : 92, } },{ month : '15 ,NOV', value : { a : 82, } },{ month : '16 ,NOV', value : { a : 83, } },{ month : '17 ,NOV', value : { a : 100, } },{ month : '18 ,NOV', value : { a : 92, } },{ month : '19 ,NOV', value : { a : 91, } },{ month : '20 ,NOV', value : { a : 96, } },{ month : '21 ,NOV', value : { a : 84, } },{ month : '22 ,NOV', value : { a : 96, } },{ month : '23 ,NOV', value : { a : 87, } },{ month : '24 ,NOV', value : { a : 93, } },{ month : '25 ,NOV', value : { a : 91, } },{ month : '26 ,NOV', value : { a : 88, } },{ month : '27 ,NOV', value : { a : 110, } },{ month : '28 ,NOV', value : { a : 91, } },{ month : '29 ,NOV', value : { a : 87, } },{ month : '30 ,NOV', value : { a : 82, } },{ month : '1 ,DEC', value : { a : 89, } },{ month : '2 ,DEC', value : { a : 93, } },{ month : '3 ,DEC', value : { a : 108, } },{ month : '4 ,DEC', value : { a : 95, } },{ month : '5 ,DEC', value : { a : 120, } },{ month : '6 ,DEC', value : { a : 96, } },{ month : '7 ,DEC', value : { a : 100, } },{ month : '8 ,DEC', value : { a : 108, } },{ month : '9 ,DEC', value : { a : 92, } },{ month : '10 ,DEC', value : { a : 85, } },{ month : '11 ,DEC', value : { a : 109, } },{ month : '12 ,DEC', value : { a : 118, } },{ month : '13 ,DEC', value : { a : 96, } },{ month : '14 ,DEC', value : { a : 98, } },{ month : '15 ,DEC', value : { a : 80, } },{ month : '16 ,DEC', value : { a : 110, } },{ month : '17 ,DEC', value : { a : 90, } },{ month : '18 ,DEC', value : { a : 87, } },{ month : '19 ,DEC', value : { a : 97, } },{ month : '20 ,DEC', value : { a : 100, } },{ month : '21 ,DEC', value : { a : 102, } },{ month : '22 ,DEC', value : { a : 119, } },{ month : '23 ,DEC', value : { a : 96, } },{ month : '24 ,DEC', value : { a : 117, } },{ month : '25 ,DEC', value : { a : 111, } },{ month : '26 ,DEC', value : { a : 109, } },{ month : '27 ,DEC', value : { a : 109, } },{ month : '28 ,DEC', value : { a : 85, } },{ month : '29 ,DEC', value : { a : 85, } },{ month : '30 ,DEC', value : { a : 80, } },{ month : '31 ,DEC', value : { a : 103, } }
+			];
+			var l_instruction3 = {
+				id : "3rd",
+				container : "l_cntnr3",
+				type : "tiny",
+				title : "Product Trends by Year",
+				width : 0,
+				height : 0,
+				paddingx : 0,
+				paddingy : 0,
+				axis_color : "#0e66a9",
+				x_axis_name : "Month",
+				y_axis_name : "",
+				x_division_no : "8",//"" means Number of data
+				y_division_no : "8",//"" means Number of data
+				path_no : 1,
+				main_title : false,
+				icon : false,
+				x_axis : false,
+				x_axis_division : false,
+				x_axis_title : false,
+				x_axis_label : false,
+				y_axis : false,
+				y_axis_division : true,
+				y_axis_title : true,
+				y_axis_label : false,
+				x_axis_hover_design : false,
+				y_axis_hover_design : false,
+				popup_design : false,
+				popup_footer_design : false,
+				select_area : false,
+			};
+			l_path_detail3 = [{
+				name : "Laptop",
+				color : "#0e66a9",
+				type : ["line_path"],
+				stroke : [1.5],
+				circle : true,
+				circle_zoom_out : 0,
+				circle_zoom_in : 3,
+				label : false,
+			}];
+			check(l_data3, l_instruction3, l_path_detail3);	
+
+			///////////////////////////     4    ///////////////////////////	
+			var l_data4 = [
+				{ month : '1 ,JAN', value : { a : 13, } },{ month : '2 ,JAN', value : { a : 24, } },{ month : '3 ,JAN', value : { a : 34, } },{ month : '4 ,JAN', value : { a : 15, } },{ month : '5 ,JAN', value : { a : 38, } },{ month : '6 ,JAN', value : { a : 34, } },{ month : '7 ,JAN', value : { a : 42, } },{ month : '8 ,JAN', value : { a : 25, } },{ month : '9 ,JAN', value : { a : 31, } },{ month : '10 ,JAN', value : { a : 22, } },{ month : '11 ,JAN', value : { a : 39, } },{ month : '12 ,JAN', value : { a : 26, } },{ month : '13 ,JAN', value : { a : 29, } },{ month : '14 ,JAN', value : { a : 30, } },{ month : '15 ,JAN', value : { a : 11, } },{ month : '16 ,JAN', value : { a : 5, } },{ month : '17 ,JAN', value : { a : 19, } },{ month : '18 ,JAN', value : { a : 13, } },
+			];
+			var l_instruction4 = {
+				id : "4th",
+				container : "l_cntnr4",
+				title : "Product Trends by Month",
+				width : 0,
+				height : 0,
+				paddingx : 0,
+				paddingy : 0,
+				axis_color : "#0e66a9",
+				x_axis_name : "Month",
+				y_axis_name : "",
+				x_division_no : "12",//"" means Number of data
+				y_division_no : "8",//"" means Number of data
+				path_no : 1,
+				type : "tiny",
+				main_title : false,
+				icon : false,
+				x_axis : false,
+				x_axis_division : false,
+				x_axis_title : false,
+				x_axis_label : false,
+				y_axis : false,
+				y_axis_division : true,
+				y_axis_title : true,
+				y_axis_label : false,
+				x_axis_hover_design : false,
+				y_axis_hover_design : false,
+				popup_design : false,
+				popup_footer_design : false,
+				select_area : false,
+			};
+			l_path_detail4 = [{
+				name : "Laptop",
+				color : "#9e003d",
+				type : ["stepline_path"],
+				stroke : [3],
+				circle : true,
+				circle_zoom_out : 0,
+				circle_zoom_in : 3,
+				label : false,
+			}];			
+			check(l_data4, l_instruction4, l_path_detail4);
+			
+			///////////////////////////     9    ///////////////////////////
+			var l_data9 = [
+					{ month : 'JAN', value : { a : 11, b : -15, } },{ month : 'FEB', value : { a : 0, b : 6, } },{ month : 'MAR', value : { a : 0, b : 0, } },{ month : 'APR', value : { a : 15, b : -3, } },{ month : 'MAY', value : { a : 46, b : 12, } },{ month : 'JUN', value : { a : 25, b : 12, } },{ month : 'JUL', value : { a : -6, b : -13, } },{ month : 'AUG', value : { a : 4, b : 6, } },{ month : 'SEP', value : { a : 26, b : 8, } },{ month : 'OCT', value : { a : 12, b : -18, } },{ month : 'NOV', value : { a : 5, b : 17, } },{ month : 'DEC', value : { a : 21, b : 1, } },
+				];
+			var l_instruction9 = {
+				id : "l9th",
+				container : "l_cntnr9",
+				title : "",
+				width : 0,
+				height : 0,
+				paddingx : 0,
+				paddingy : 0,
+				axis_color : "#0e66a9",
+				x_axis_name : "Month",
+				y_axis_name : "",
+				x_division_no : "4",//"" means Number of data
+				y_division_no : "8",//"" means Number of data
+				path_no : 2,
+				type : "tiny",
+				main_title : false,
+				icon : false,
+				x_axis : false,
+				x_axis_division : false,
+				x_axis_title : false,
+				x_axis_label : false,
+				y_axis : false,
+				y_axis_division : true,
+				y_axis_title : true,
+				y_axis_label : false,
+				x_axis_hover_design : false,
+				y_axis_hover_design : false,
+				popup_design : false,
+				popup_footer_design : false,
+				select_area : false,
+			};
+			l_path_detail9 = [{
+				name : "Normal",
+				color : "#007c00",
+				type : ["round_path"],
+				stroke : [ 2],
+				circle : true,
+				circle_zoom_out : 0,
+				circle_zoom_in : 3,
+				label : true,
+			},{
+				name : "Coldest",
+				color : "#03a9f4",
+				type : ["round_path"],
+				stroke : [ 2],
+				circle : true,
+				circle_zoom_out : 2,
+				circle_zoom_in : 3,
+				label : false,
+			}];
+			
+			check(l_data9, l_instruction9, l_path_detail9);	
+
+
+			///////////////////////////     5    ///////////////////////////
+			var l_data5 = [{month : 'JAN', value : { a : 2.5, b : 7.0, c : -2.0, } },{ month : 'FEB', value : { a : 3.8, b : 8.2, c : 3.4, } },{ month : 'MAR', value : { a : 8.8, b : 14.1, c : -0.7, } },{ month : 'APR', value : { a : 14.2, b : 20.5, c : 7.9, } },{ month : 'MAY', value : { a : 17.7, b : 24.5, c : 10.8, } },{ month : 'JUN', value : { a : 22.3, b : 29.6, c : 14.9, } },{ month : 'JUL', value : { a : 24.1, b : 30.1, c : 18.1, } },{ month : 'AUG', value : { a : 23.5, b : 29.6, c : 17.5, } },{ month : 'SEP', value : { a : 19.8, b : 27.4, c : 12.1, } },{ month : 'OCT', value : { a : 14.1, b : 22.4, c : 5.8, } },{ month : 'NOV', value : { a : 8.1, b : 15.1, c : 0.9, } },{ month : 'DEC', value : { a : 3.4, b : 8.2, c : -1.5, } }];
+			var l_instruction5 = {
+				id : "5th",
+				container : "l_cntnr5",
+				title : "Weather statistics for Jammu and Kashmir",
+				width : 0,
+				height : 0,
+				paddingx : 0,
+				paddingy : 0,
+				axis_color : "#0e66a9",
+				x_axis_name : "Month",
+				y_axis_name : "",
+				x_division_no : "4",//"" means Number of data
+				y_division_no : "8",//"" means Number of data
+				path_no : 3,
+				type : "tiny",
+				main_title : false,
+				icon : false,
+				x_axis : false,
+				x_axis_division : false,
+				x_axis_title : false,
+				x_axis_label : false,
+				y_axis : false,
+				y_axis_division : true,
+				y_axis_title : true,
+				y_axis_label : false,
+				x_axis_hover_design : false,
+				y_axis_hover_design : false,
+				popup_design : false,
+				popup_footer_design : false,
+				select_area : false,
+			};
+			l_path_detail5 = [{
+				name : "Normal",
+				color : "#0e66a9",
+				type : ["line_path"],
+				stroke : [ 3],
+				circle : true,
+				circle_zoom_out : 0,
+				circle_zoom_in : 3,
+				label : true,
+			},{
+				name : "Warmest",
+				color : "#ff9800",
+				type : ["line_path"],
+				stroke : [ 3],
+				circle : true,
+				circle_zoom_out : 0,
+				circle_zoom_in : 3,
+				label : true,
+			},{
+				name : "Coldest",
+				color : "#03a9f4",
+				type : ["line_path"],
+				stroke : [3],
+				circle : true,
+				circle_zoom_out : 0,
+				circle_zoom_in : 3,
+				label : true,
+			}];
+			
+			check(l_data5, l_instruction5, l_path_detail5);	
+
+			///////////////////////////     6    ///////////////////////////	
+			var l_data6 = [
+				{ month : '1 ,JAN', value : { a : 7, } },{ month : '2 ,JAN', value : { a : 10, } },{ month : '3 ,JAN', value : { a : 12, } },{ month : '4 ,JAN', value : { a : 18, } },{ month : '5 ,JAN', value : { a : 13, } },{ month : '6 ,JAN', value : { a : 25, } },{ month : '7 ,JAN', value : { a : 28, } },{ month : '8 ,JAN', value : { a : 20, } },{ month : '9 ,JAN', value : { a : 26, } },{ month : '10 ,JAN', value : { a : 31, } },{ month : '11 ,JAN', value : { a : 35, } },{ month : '12 ,JAN', value : { a : 30, } },{ month : '13 ,JAN', value : { a : 31, } },{ month : '14 ,JAN', value : { a : 42, } },{ month : '15 ,JAN', value : { a : 40, } },{ month : '16 ,JAN', value : { a : 43, } },{ month : '17 ,JAN', value : { a : 47, } },{ month : '18 ,JAN', value : { a : 35, } },{ month : '19 ,JAN', value : { a : 43, } },{ month : '20 ,JAN', value : { a : 40, } },{ month : '21 ,JAN', value : { a : 42, } },{ month : '22 ,JAN', value : { a : 38, } },{ month : '23 ,JAN', value : { a : 36, } },{ month : '24 ,JAN', value : { a : 39, } },{ month : '25 ,JAN', value : { a : 36, } },{ month : '26 ,JAN', value : { a : 33, } },{ month : '27 ,JAN', value : { a : 45, } },{ month : '28 ,JAN', value : { a : 49, } },{ month : '29 ,JAN', value : { a : 47, } },{ month : '30 ,JAN', value : { a : 48, } },{ month : '31 ,JAN', value : { a : 52, } },
+				];
+			var l_instruction6 = {
+				id : "6th",
+				container : "l_cntnr6",
+				title : "Product Trends by Month",
+				width : 0,
+				height : 0,
+				paddingx : 0,
+				paddingy : 0,
+				axis_color : "#0e66a9",
+				x_axis_name : "Month",
+				y_axis_name : "",
+				x_division_no : "12",//"" means Number of data
+				y_division_no : "8",//"" means Number of data
+				path_no : 1,
+				type : "tiny",
+				main_title : false,
+				icon : false,
+				x_axis : false,
+				x_axis_division : false,
+				x_axis_title : false,
+				x_axis_label : false,
+				y_axis : false,
+				y_axis_division : true,
+				y_axis_title : true,
+				y_axis_label : false,
+				x_axis_hover_design : false,
+				y_axis_hover_design : false,
+				popup_design : false,
+				popup_footer_design : false,
+				select_area : false,
+				//anotation
+				annotations: {
+					yaxis: [{
+						y: 33,
+						borderColor: '#da3b01',
+						label: {
+						  borderColor: '#da3b01',
+						  style: {
+							color: '#fff',
+							background: '#da3b01',
+						  },
+						  text: 'Growth',
+						}
+					 }],
+					xaxis: [{
+						x1: "22 ,JAN",
+						x2: "28 ,JAN",
+						borderColor: '#00b7c3',
+						fillColor: '#00b7c3',
+						opacity: .2,
+						label: {
+						  borderColor: '#00b7c3',
+						  style: {
+							fontSize: '10px',
+							color: '#fff',
+							background: '#00b7c3',
+						  },
+						  offsetY: -10,
+						  text: 'Support',
+						}
+					},],
+					points: [{
+						x: "16 ,JAN",
+						y: 43,
+						marker: {
+						  fillColor: '#fff',
+						  strokeColor: '#bf0077',
+						  radius: 8,
+						  strokeWidth: 2,
+						},
+						label: {
+						  borderColor: '#bf0077',
+						  style: {
+							color: '#fff',
+							background: '#bf0077',
+						  },					
+						  text: 'New model',
+						}
+					}],
+					
+				},
+			};
+			l_path_detail6 = [{
+				name : "Laptop",
+				color : "#00aeeb",
+				type : ["line_path"],
+				stroke : [3],
+				circle : true,
+				circle_zoom_out : 0,
+				circle_zoom_in : 3,
+				label : false,
+			}];
+			
+			check(l_data6, l_instruction6, l_path_detail6);	
+			
+			//////////////////////// 7 //////////////////////////
+			var l_data7 = [
+				{ month : '1 ,JAN', value : { a : -7, } },{ month : '2 ,JAN', value : { a : -10, } },{ month : '3 ,JAN', value : { a : -9, } },{ month : '4 ,JAN', value : { a : -8, } },{ month : '5 ,JAN', value : { a : 6, } },{ month : '6 ,JAN', value : { a : 25, } },{ month : '7 ,JAN', value : { a : 28, } },{ month : '8 ,JAN', value : { a : 20, } },{ month : '9 ,JAN', value : { a : 26, } },{ month : '10 ,JAN', value : { a : 31, } },{ month : '11 ,JAN', value : { a : 35, } },{ month : '12 ,JAN', value : { a : 30, } },{ month : '13 ,JAN', value : { a : 31, } },{ month : '14 ,JAN', value : { a : 42, } },{ month : '15 ,JAN', value : { a : 40, } },{ month : '16 ,JAN', value : { a : 43, } },{ month : '17 ,JAN', value : { a : 47, } },{ month : '18 ,JAN', value : { a : 35, } },{ month : '19 ,JAN', value : { a : 52, } },{ month : '20 ,JAN', value : { a : 53, } },{ month : '21 ,JAN', value : { a : 52, } },{ month : '22 ,JAN', value : { a : 38, } },{ month : '23 ,JAN', value : { a : 36, } },{ month : '24 ,JAN', value : { a : 39, } },{ month : '25 ,JAN', value : { a : 36, } },{ month : '26 ,JAN', value : { a : 33, } },{ month : '27 ,JAN', value : { a : 45, } },{ month : '28 ,JAN', value : { a : 49, } },{ month : '29 ,JAN', value : { a : 47, } },{ month : '30 ,JAN', value : { a : 48, } },{ month : '31 ,JAN', value : { a : 52, } },
+				];
+			var l_instruction7 = {
+				id : "7th",
+				container : "l_cntnr7",
+				title : "Product Trends by Month",
+				width : 0,
+				height : 0,
+				paddingx : 0,
+				paddingy : 0,
+				axis_color : "#0e66a9",
+				x_axis_name : "Month",
+				y_axis_name : "",
+				x_division_no : "12",//"" means Number of data
+				y_division_no : "8",//"" means Number of data
+				path_no : 1,
+				type : "tiny",
+				main_title : false,
+				icon : false,
+				x_axis : false,
+				x_axis_division : false,
+				x_axis_title : false,
+				x_axis_label : false,
+				y_axis : false,
+				y_axis_division : true,
+				y_axis_title : true,
+				y_axis_label : false,
+				x_axis_hover_design : false,
+				y_axis_hover_design : false,
+				popup_design : false,
+				popup_footer_design : false,
+				select_area : false,
+				//anotation
+				annotations: {
+					yaxis: [{
+						y1: 20,
+						y2: 35,
+						borderColor: '#FEB019',
+						fillColor: '#FEB019',
+						opacity: 0.2,
+						label: {
+						  borderColor: '#FEB019',
+						  style: {
+							fontSize: '10px',
+							color: '#333',
+							background: '#FEB019',
+						  },
+						  text: 'Y-axis range',
+						}
+					}],
+					xaxis: [{
+						x: "28 ,JAN",
+						borderColor: '#775DD0',
+						label: {
+						  borderColor: '#775DD0',
+						  style: {
+							color: '#fff',
+							background: '#775DD0',
+						  },
+						  text: 'Anno Test',
+						}
+					}],
+					max: [{
+						marker: {
+						  fillColor: '#fff',
+						  strokeColor: 'red',
+						  radius: 8,
+						  strokeWidth: 2,
+						},
+						label: {
+						  borderColor: '#FF4560',
+						  style: {
+							color: '#fff',
+							background: '#FF4560',
+						  },					
+						  text: 'Max point',
+						}
+					}],
+					min: [{
+						marker: {
+						  fillColor: '#fff',
+						  strokeColor: '#00aeeb',
+						  radius: 8,
+						  strokeWidth: 2,
+						},
+						label: {
+						  borderColor: '#00aeeb',
+						  style: {
+							color: '#fff',
+							background: '#00aeeb',
+						  },					
+						  text: 'Min point',
+						}
+					}],
+				},
+			};
+			l_path_detail7 = [{
+				name : "Laptop",
+				color : "#0e66a9",
+				type : ["line_path"],
+				stroke : [3],
+				circle : true,
+				circle_zoom_out : 0,
+				circle_zoom_in : 3,
+				label : false,
+			}];			
+			check(l_data7, l_instruction7, l_path_detail7);		
+			
+			//////////////////////////////////// 8 //////////////////////////////////
+			var l_data8_1 = [
+				{ month : 'JAN', value : { a : 15, } },{ month : 'FEB', value : { a : 38, } },{ month : 'MAR', value : { a : 4, } },{ month : 'APR', value : { a : 28, } },{ month : 'MAY', value : { a : 31, } },{ month : 'JUN', value : { a : 14, } },{ month : 'JUL', value : { a : 27, } },{ month : 'AUG', value : { a : 48, } },{ month : 'SEP', value : { a : 11, } },{ month : 'OCT', value : { a : 28, } },{ month : 'NOV', value : { a : 32, } },{ month : 'DEC', value : { a : 25, } },
+				
+			];
+			var l_instruction8_1 = {
+				id : "l8th1",
+				sync_id : "lsync1",
+				container : "l_cntnr8_1",
+				type : "tiny",
+				title : "Line Syncing chart",
+				width : 360,
+				height : 64,
+				paddingx : 1,
+				paddingy : 1,
+				axis_color : "#0e66a9",
+				x_axis_name : "Month",
+				y_axis_name : "",
+				x_division_no : "12",//"" means Number of data
+				y_division_no : "4",//"" means Number of data
+				path_no : 1,
+				main_title : false,
+				icon : false,
+				x_axis : false,
+				x_axis_division : false,
+				x_axis_title : false,
+				x_axis_label : false,
+				y_axis : false,
+				y_axis_division : true,
+				y_axis_title : true,
+				y_axis_label : false,
+				x_axis_hover_design : false,
+				y_axis_hover_design : false,
+				popup_design : false,
+				popup_footer_design : false,
+				select_area : false,
+			};
+			l_path_detail8_1 = [{
+				name : "Line",
+				color : "#0e66a9",
+				type : ["line_path"],
+				stroke : [ 3],
+				circle : true,
+				circle_zoom_out : 3,
+				circle_zoom_in : 4,
+				label : false,
+			}];
+			
+			check(l_data8_1, l_instruction8_1, l_path_detail8_1);			
+			
+			var l_data8_2 = [
+				{ month : 'JAN', value : { a : 4, } },{ month : 'FEB', value : { a : 30, } },{ month : 'MAR', value : { a : 7, } },{ month : 'APR', value : { a : 22, } },{ month : 'MAY', value : { a : 2, } },{ month : 'JUN', value : { a : 44, } },{ month : 'JUL', value : { a : 30, } },{ month : 'AUG', value : { a : 28, } },{ month : 'SEP', value : { a : 12, } },{ month : 'OCT', value : { a : 11, } },{ month : 'NOV', value : { a : 48, } },{ month : 'DEC', value : { a : 10, } },
+			];
+			var l_instruction8_2 = {
+				id : "l8th2",
+				sync_id : "lsync1",
+				container : "l_cntnr8_2",
+				type : "tiny",
+				title : "Weather statistics for Jammu and Kashmir",
+				width : 360,
+				height : 64,
+				paddingx : 1,
+				paddingy : 1,
+				axis_color : "#007c00",
+				x_axis_name : "Month",
+				y_axis_name : "",
+				x_division_no : "5",//"" means Number of data
+				y_division_no : "4",//"" means Number of data
+				path_no : 1,
+				main_title : false,
+				icon : false,
+				x_axis : false,
+				x_axis_division : false,
+				x_axis_title : false,
+				x_axis_label : false,
+				y_axis : false,
+				y_axis_division : true,
+				y_axis_title : true,
+				y_axis_label : false,
+				x_axis_hover_design : false,
+				y_axis_hover_design : false,
+				popup_design : false,
+				popup_footer_design : false,
+				select_area : false,
+			};
+			l_path_detail8_2 = [{
+				name : "Round",
+				color : "#007c00",
+				type : ["round_path"],
+				stroke : [3],
+				circle : true,
+				circle_zoom_out : 0,
+				circle_zoom_in : 4,
+				label : true,
+			}];
+
+			check(l_data8_2, l_instruction8_2, l_path_detail8_2);		
+			
+			
+			var l_data8_3 = [
+				{ month : 'JAN', value : { a : 29, b : 61, } },{ month : 'FEB', value : { a : 41, b : 14, } },{ month : 'MAR', value : { a : 41, b : 50, } },{ month : 'APR', value : { a : 44, b : 68, } },{ month : 'MAY', value : { a : 26, b : 44, } },{ month : 'JUN', value : { a : 41, b : 67, } },{ month : 'JUL', value : { a : 29, b : 13, } },{ month : 'AUG', value : { a : 10, b : 66, } },{ month : 'SEP', value : { a : 26, b : 39, } },{ month : 'OCT', value : { a : 47, b : 55, } },{ month : 'NOV', value : { a : 33, b : 97, } },{ month : 'DEC', value : { a : 25, b : 87, } },
+			];
+			var l_instruction8_3 = {
+				id : "l8th3",
+				sync_id : "lsync1",
+				container : "l_cntnr8_3",
+				type : "tiny",
+				title : "Weather statistics for Jammu and Kashmir",
+				width : 360,
+				height : 64,
+				paddingx : 1,
+				paddingy : 1,
+				axis_color : "#bf0077",
+				x_axis_name : "Month",
+				y_axis_name : "",
+				x_division_no : "5",//"" means Number of data
+				y_division_no : "4",//"" means Number of data
+				path_no : 2,
+				main_title : false,
+				icon : false,
+				x_axis : false,
+				x_axis_division : false,
+				x_axis_title : false,
+				x_axis_label : false,
+				y_axis : false,
+				y_axis_division : true,
+				y_axis_title : true,
+				y_axis_label : false,
+				x_axis_hover_design : false,
+				y_axis_hover_design : false,
+				popup_design : false,
+				popup_footer_design : false,
+				select_area : false,
+			};
+			l_path_detail8_3 = [{
+				name : "Round",
+				color : "#ff0000",
+				type : ["round_path"],
+				stroke : [3],
+				circle : true,
+				circle_zoom_out : 0,
+				circle_zoom_in : 4,
+				label : true,
+			},{
+				name : "Line",
+				color : "#bf0077",
+				type : ["line_path"],
+				stroke : [3],
+				circle : true,
+				circle_zoom_out : 3,
+				circle_zoom_in : 4,
+				label : false,
+			}];
+
+			check(l_data8_3, l_instruction8_3, l_path_detail8_3);
+			
+			
+			////////////////////////////////// Area ///////////////////////////////
+			//////////////////////////////////   1  ///////////////////////////////
+			var adata1 = [{ month : 'JAN', value : { a : 98, } },{ month : 'FEB', value : { a : 105, } },{ month : 'MAR', value : { a : 121, } },{ month : 'APR', value : { a : 102, } },{ month : 'MAY', value : { a : 133, } },{ month : 'JUN', value : { a : 142, } },{ month : 'JUL', value : { a : 129, } },{ month : 'AUG', value : { a : 155, } },{ month : 'SEP', value : { a : 165, } },{ month : 'OCT', value : { a : 194, } },{ month : 'NOV', value : { a : 201, } },{ month : 'DEC', value : { a : 261, } }
+			];
+			var ainstruction1 = {
+				id : "a1st",
+				container : "a_cntnr1",
+				title : "Product Trends by Month",
+				width : 0,
+				height : 0,
+				paddingx : 0,
+				paddingy : 0,
+				axis_color : "#0e66a9",
+				x_axis_name : "Month",
+				y_axis_name : "",
+				x_division_no : "12",//"" means Number of data
+				y_division_no : "8",//"" means Number of data
+				path_no : 1,
+				type : "tiny",
+				main_title : false,
+				icon : false,
+				x_axis : false,
+				x_axis_division : false,
+				x_axis_title : false,
+				x_axis_label : false,
+				y_axis : false,
+				y_axis_division : true,
+				y_axis_title : true,
+				y_axis_label : false,
+				x_axis_hover_design : false,
+				y_axis_hover_design : false,
+				popup_design : false,
+				popup_footer_design : false,
+				select_area : false,
+			};
+			apath_detail1 = [{
+				name : "Laptop",
+				color : "#0e66a9",
+				type : ["line_area","line_path"],
+				stroke : [0, 3],
+				circle : true,
+				circle_zoom_out : 0,
+				circle_zoom_in : 3,
+				label : false,
+			}];			
+			check(adata1, ainstruction1, apath_detail1);	
+			
+			/////////////////////////////// 2 /////////////////////////////////
+			var adata2 = [
+				{ month : '1 ,JAN', value : { a : 13, } },{ month : '2 ,JAN', value : { a : 24, } },{ month : '3 ,JAN', value : { a : 34, } },{ month : '4 ,JAN', value : { a : 15, } },{ month : '5 ,JAN', value : { a : 38, } },{ month : '6 ,JAN', value : { a : 34, } },{ month : '7 ,JAN', value : { a : 42, } },{ month : '8 ,JAN', value : { a : 25, } },{ month : '9 ,JAN', value : { a : 31, } },{ month : '10 ,JAN', value : { a : 22, } },{ month : '11 ,JAN', value : { a : 39, } },{ month : '12 ,JAN', value : { a : 26, } },{ month : '13 ,JAN', value : { a : 29, } },{ month : '14 ,JAN', value : { a : 30, } },{ month : '15 ,JAN', value : { a : 11, } },{ month : '16 ,JAN', value : { a : 5, } },{ month : '17 ,JAN', value : { a : 19, } },{ month : '18 ,JAN', value : { a : 13, } },
+			];
+			var ainstruction2 = {
+				id : "a2nd",
+				container : "a_cntnr2",
+				title : "Product Trends by Month",
+				width : 0,
+				height : 0,
+				paddingx : 0,
+				paddingy : 0,
+				axis_color : "#0e66a9",
+				x_axis_name : "Month",
+				y_axis_name : "",
+				x_division_no : "12",//"" means Number of data
+				y_division_no : "8",//"" means Number of data
+				path_no : 1,
+				type : "tiny",
+				main_title : false,
+				icon : false,
+				x_axis : false,
+				x_axis_division : false,
+				x_axis_title : false,
+				x_axis_label : false,
+				y_axis : false,
+				y_axis_division : true,
+				y_axis_title : true,
+				y_axis_label : false,
+				x_axis_hover_design : false,
+				y_axis_hover_design : false,
+				popup_design : false,
+				popup_footer_design : false,
+				select_area : false,
+			};
+			apath_detail2 = [{
+				name : "Laptop",
+				color : "#770069",
+				type : ["round_area","round_path"],
+				stroke : [0, 3],
+				circle : true,
+				circle_zoom_out : 2,
+				circle_zoom_in : 3,
+				label : false,
+			}];			
+			check(adata2, ainstruction2, apath_detail2);	
+			
+			//////////////////////// 3 ////////////////////////
+			var adata3 = [
+				{ month : '1 ,JAN', value : { a : 40, } },{ month : '2 ,JAN', value : { a : 30, } },{ month : '3 ,JAN', value : { a : 39, } },{ month : '4 ,JAN', value : { a : 43, } },{ month : '5 ,JAN', value : { a : 39, } },{ month : '6 ,JAN', value : { a : 34, } },{ month : '7 ,JAN', value : { a : 38, } },{ month : '8 ,JAN', value : { a : 35, } },{ month : '9 ,JAN', value : { a : 41, } },{ month : '10 ,JAN', value : { a : 32, } },{ month : '11 ,JAN', value : { a : 47, } },{ month : '12 ,JAN', value : { a : 35, } },{ month : '13 ,JAN', value : { a : 41, } },{ month : '14 ,JAN', value : { a : 30, } },{ month : '15 ,JAN', value : { a : 38, } },{ month : '16 ,JAN', value : { a : 37, } },{ month : '17 ,JAN', value : { a : 35, } },{ month : '18 ,JAN', value : { a : 40, } },{ month : '19 ,JAN', value : { a : 42, } },{ month : '20 ,JAN', value : { a : 35, } },{ month : '21 ,JAN', value : { a : 39, } },{ month : '22 ,JAN', value : { a : 31, } },{ month : '23 ,JAN', value : { a : 45, } },{ month : '24 ,JAN', value : { a : 44, } },{ month : '25 ,JAN', value : { a : 39, } },{ month : '26 ,JAN', value : { a : 37, } },{ month : '27 ,JAN', value : { a : 39, } },{ month : '28 ,JAN', value : { a : 44, } },{ month : '29 ,JAN', value : { a : 41, } },{ month : '30 ,JAN', value : { a : 50, } },{ month : '31 ,JAN', value : { a : 33, } },{ month : '1 ,FEB', value : { a : 61, } },{ month : '2 ,FEB', value : { a : 60, } },{ month : '3 ,FEB', value : { a : 64, } },{ month : '4 ,FEB', value : { a : 66, } },{ month : '5 ,FEB', value : { a : 62, } },{ month : '6 ,FEB', value : { a : 51, } },{ month : '7 ,FEB', value : { a : 51, } },{ month : '8 ,FEB', value : { a : 52, } },{ month : '9 ,FEB', value : { a : 55, } },{ month : '10 ,FEB', value : { a : 63, } },{ month : '11 ,FEB', value : { a : 58, } },{ month : '12 ,FEB', value : { a : 61, } },{ month : '13 ,FEB', value : { a : 55, } },{ month : '14 ,FEB', value : { a : 61, } },{ month : '15 ,FEB', value : { a : 59, } },{ month : '16 ,FEB', value : { a : 52, } },{ month : '17 ,FEB', value : { a : 66, } },{ month : '18 ,FEB', value : { a : 57, } },{ month : '19 ,FEB', value : { a : 57, } },{ month : '20 ,FEB', value : { a : 59, } },{ month : '21 ,FEB', value : { a : 58, } },{ month : '22 ,FEB', value : { a : 57, } },{ month : '23 ,FEB', value : { a : 63, } },{ month : '24 ,FEB', value : { a : 53, } },{ month : '25 ,FEB', value : { a : 62, } },{ month : '26 ,FEB', value : { a : 57, } },{ month : '27 ,FEB', value : { a : 54, } },{ month : '28 ,FEB', value : { a : 66, } },{ month : '1 ,MAR', value : { a : 87, } },{ month : '2 ,MAR', value : { a : 97, } },{ month : '3 ,MAR', value : { a : 100, } },{ month : '4 ,MAR', value : { a : 96, } },{ month : '5 ,MAR', value : { a : 94, } },{ month : '6 ,MAR', value : { a : 82, } },{ month : '7 ,MAR', value : { a : 88, } },{ month : '8 ,MAR', value : { a : 85, } },{ month : '9 ,MAR', value : { a : 92, } },{ month : '10 ,MAR', value : { a : 96, } },{ month : '11 ,MAR', value : { a : 82, } },{ month : '12 ,MAR', value : { a : 86, } },{ month : '13 ,MAR', value : { a : 87, } },{ month : '14 ,MAR', value : { a : 81, } },{ month : '15 ,MAR', value : { a : 97, } },{ month : '16 ,MAR', value : { a : 98, } },{ month : '17 ,MAR', value : { a : 84, } },{ month : '18 ,MAR', value : { a : 83, } },{ month : '19 ,MAR', value : { a : 85, } },{ month : '20 ,MAR', value : { a : 98, } },{ month : '21 ,MAR', value : { a : 85, } },{ month : '22 ,MAR', value : { a : 85, } },{ month : '23 ,MAR', value : { a : 87, } },{ month : '24 ,MAR', value : { a : 97, } },{ month : '25 ,MAR', value : { a : 86, } },{ month : '26 ,MAR', value : { a : 81, } },{ month : '27 ,MAR', value : { a : 97, } },{ month : '28 ,MAR', value : { a : 90, } },{ month : '29 ,MAR', value : { a : 89, } },{ month : '30 ,MAR', value : { a : 81, } },{ month : '31 ,MAR', value : { a : 86, } },{ month : '1 ,APR', value : { a : 90, } },{ month : '2 ,APR', value : { a : 97, } },{ month : '3 ,APR', value : { a : 90, } },{ month : '4 ,APR', value : { a : 101, } },{ month : '5 ,APR', value : { a : 93, } },{ month : '6 ,APR', value : { a : 101, } },{ month : '7 ,APR', value : { a : 95, } },{ month : '8 ,APR', value : { a : 102, } },{ month : '9 ,APR', value : { a : 92, } },{ month : '10 ,APR', value : { a : 92, } },{ month : '11 ,APR', value : { a : 103, } },{ month : '12 ,APR', value : { a : 101, } },{ month : '13 ,APR', value : { a : 105, } },{ month : '14 ,APR', value : { a : 94, } },{ month : '15 ,APR', value : { a : 100, } },{ month : '16 ,APR', value : { a : 96, } },{ month : '17 ,APR', value : { a : 98, } },{ month : '18 ,APR', value : { a : 98, } },{ month : '19 ,APR', value : { a : 92, } },{ month : '20 ,APR', value : { a : 92, } },{ month : '21 ,APR', value : { a : 95, } },{ month : '22 ,APR', value : { a : 96, } },{ month : '23 ,APR', value : { a : 97, } },{ month : '24 ,APR', value : { a : 92, } },{ month : '25 ,APR', value : { a : 102, } },{ month : '26 ,APR', value : { a : 97, } },{ month : '27 ,APR', value : { a : 105, } },{ month : '28 ,APR', value : { a : 97, } },{ month : '29 ,APR', value : { a : 92, } },{ month : '30 ,APR', value : { a : 102, } },{ month : '1 ,MAY', value : { a : 107, } },{ month : '2 ,MAY', value : { a : 114, } },{ month : '3 ,MAY', value : { a : 109, } },{ month : '4 ,MAY', value : { a : 108, } },{ month : '5 ,MAY', value : { a : 101, } },{ month : '6 ,MAY', value : { a : 109, } },{ month : '7 ,MAY', value : { a : 102, } },{ month : '8 ,MAY', value : { a : 108, } },{ month : '9 ,MAY', value : { a : 106, } },{ month : '10 ,MAY', value : { a : 114, } },{ month : '11 ,MAY', value : { a : 114, } },{ month : '12 ,MAY', value : { a : 113, } },{ month : '13 ,MAY', value : { a : 101, } },{ month : '14 ,MAY', value : { a : 112, } },{ month : '15 ,MAY', value : { a : 112, } },{ month : '16 ,MAY', value : { a : 104, } },{ month : '17 ,MAY', value : { a : 104, } },{ month : '18 ,MAY', value : { a : 106, } },{ month : '19 ,MAY', value : { a : 114, } },{ month : '20 ,MAY', value : { a : 113, } },{ month : '21 ,MAY', value : { a : 108, } },{ month : '22 ,MAY', value : { a : 105, } },{ month : '23 ,MAY', value : { a : 106, } },{ month : '24 ,MAY', value : { a : 105, } },{ month : '25 ,MAY', value : { a : 104, } },{ month : '26 ,MAY', value : { a : 110, } },{ month : '27 ,MAY', value : { a : 112, } },{ month : '28 ,MAY', value : { a : 102, } },{ month : '29 ,MAY', value : { a : 102, } },{ month : '30 ,MAY', value : { a : 110, } },{ month : '31 ,MAY', value : { a : 110, } },{ month : '1 ,JUN', value : { a : 122, } },{ month : '2 ,JUN', value : { a : 114, } },{ month : '3 ,JUN', value : { a : 115, } },{ month : '4 ,JUN', value : { a : 116, } },{ month : '5 ,JUN', value : { a : 130, } },{ month : '6 ,JUN', value : { a : 126, } },{ month : '7 ,JUN', value : { a : 124, } },{ month : '8 ,JUN', value : { a : 115, } },{ month : '9 ,JUN', value : { a : 117, } },{ month : '10 ,JUN', value : { a : 115, } },{ month : '11 ,JUN', value : { a : 113, } },{ month : '12 ,JUN', value : { a : 113, } },{ month : '13 ,JUN', value : { a : 110, } },{ month : '14 ,JUN', value : { a : 112, } },{ month : '15 ,JUN', value : { a : 115, } },{ month : '16 ,JUN', value : { a : 115, } },{ month : '17 ,JUN', value : { a : 111, } },{ month : '18 ,JUN', value : { a : 115, } },{ month : '19 ,JUN', value : { a : 117, } },{ month : '20 ,JUN', value : { a : 115, } },{ month : '21 ,JUN', value : { a : 120, } },{ month : '22 ,JUN', value : { a : 111, } },{ month : '23 ,JUN', value : { a : 112, } },{ month : '24 ,JUN', value : { a : 128, } },{ month : '25 ,JUN', value : { a : 126, } },{ month : '26 ,JUN', value : { a : 116, } },{ month : '27 ,JUN', value : { a : 118, } },{ month : '28 ,JUN', value : { a : 122, } },{ month : '29 ,JUN', value : { a : 114, } },{ month : '30 ,JUN', value : { a : 111, } },{ month : '1 ,JUL', value : { a : 104, } },{ month : '2 ,JUL', value : { a : 95, } },{ month : '3 ,JUL', value : { a : 95, } },{ month : '4 ,JUL', value : { a : 101, } },{ month : '5 ,JUL', value : { a : 119, } },{ month : '6 ,JUL', value : { a : 113, } },{ month : '7 ,JUL', value : { a : 115, } },{ month : '8 ,JUL', value : { a : 108, } },{ month : '9 ,JUL', value : { a : 114, } },{ month : '10 ,JUL', value : { a : 104, } },{ month : '11 ,JUL', value : { a : 113, } },{ month : '12 ,JUL', value : { a : 105, } },{ month : '13 ,JUL', value : { a : 104, } },{ month : '14 ,JUL', value : { a : 110, } },{ month : '15 ,JUL', value : { a : 118, } },{ month : '16 ,JUL', value : { a : 100, } },{ month : '17 ,JUL', value : { a : 99, } },{ month : '18 ,JUL', value : { a : 103, } },{ month : '19 ,JUL', value : { a : 110, } },{ month : '20 ,JUL', value : { a : 99, } },{ month : '21 ,JUL', value : { a : 116, } },{ month : '22 ,JUL', value : { a : 112, } },{ month : '23 ,JUL', value : { a : 100, } },{ month : '24 ,JUL', value : { a : 99, } },{ month : '25 ,JUL', value : { a : 101, } },{ month : '26 ,JUL', value : { a : 100, } },{ month : '27 ,JUL', value : { a : 113, } },{ month : '28 ,JUL', value : { a : 96, } },{ month : '29 ,JUL', value : { a : 100, } },{ month : '30 ,JUL', value : { a : 108, } },{ month : '31 ,JUL', value : { a : 103, } },{ month : '1 ,AUG', value : { a : 129, } },{ month : '2 ,AUG', value : { a : 118, } },{ month : '3 ,AUG', value : { a : 111, } },{ month : '4 ,AUG', value : { a : 123, } },{ month : '5 ,AUG', value : { a : 115, } },{ month : '6 ,AUG', value : { a : 129, } },{ month : '7 ,AUG', value : { a : 121, } },{ month : '8 ,AUG', value : { a : 110, } },{ month : '9 ,AUG', value : { a : 123, } },{ month : '10 ,AUG', value : { a : 113, } },{ month : '11 ,AUG', value : { a : 123, } },{ month : '12 ,AUG', value : { a : 121, } },{ month : '13 ,AUG', value : { a : 132, } },{ month : '14 ,AUG', value : { a : 120, } },{ month : '15 ,AUG', value : { a : 119, } },{ month : '16 ,AUG', value : { a : 117, } },{ month : '17 ,AUG', value : { a : 123, } },{ month : '18 ,AUG', value : { a : 135, } },{ month : '19 ,AUG', value : { a : 129, } },{ month : '20 ,AUG', value : { a : 127, } },{ month : '21 ,AUG', value : { a : 111, } },{ month : '22 ,AUG', value : { a : 110, } },{ month : '23 ,AUG', value : { a : 128, } },{ month : '24 ,AUG', value : { a : 118, } },{ month : '25 ,AUG', value : { a : 113, } },{ month : '26 ,AUG', value : { a : 117, } },{ month : '27 ,AUG', value : { a : 130, } },{ month : '28 ,AUG', value : { a : 130, } },{ month : '29 ,AUG', value : { a : 123, } },{ month : '30 ,AUG', value : { a : 120, } },{ month : '31 ,AUG', value : { a : 129, } },{ month : '1 ,SEP', value : { a : 127, } },{ month : '2 ,SEP', value : { a : 139, } },{ month : '3 ,SEP', value : { a : 130, } },{ month : '4 ,SEP', value : { a : 143, } },{ month : '5 ,SEP', value : { a : 143, } },{ month : '6 ,SEP', value : { a : 139, } },{ month : '7 ,SEP', value : { a : 138, } },{ month : '8 ,SEP', value : { a : 126, } },{ month : '9 ,SEP', value : { a : 136, } },{ month : '10 ,SEP', value : { a : 142, } },{ month : '11 ,SEP', value : { a : 132, } },{ month : '12 ,SEP', value : { a : 133, } },{ month : '13 ,SEP', value : { a : 131, } },{ month : '14 ,SEP', value : { a : 126, } },{ month : '15 ,SEP', value : { a : 144, } },{ month : '16 ,SEP', value : { a : 137, } },{ month : '17 ,SEP', value : { a : 129, } },{ month : '18 ,SEP', value : { a : 143, } },{ month : '19 ,SEP', value : { a : 142, } },{ month : '20 ,SEP', value : { a : 134, } },{ month : '21 ,SEP', value : { a : 125, } },{ month : '22 ,SEP', value : { a : 143, } },{ month : '23 ,SEP', value : { a : 138, } },{ month : '24 ,SEP', value : { a : 134, } },{ month : '25 ,SEP', value : { a : 140, } },{ month : '26 ,SEP', value : { a : 127, } },{ month : '27 ,SEP', value : { a : 144, } },{ month : '28 ,SEP', value : { a : 144, } },{ month : '29 ,SEP', value : { a : 126, } },{ month : '30 ,SEP', value : { a : 136, } },{ month : '1 ,OCT', value : { a : 117, } },{ month : '2 ,OCT', value : { a : 111, } },{ month : '3 ,OCT', value : { a : 116, } },{ month : '4 ,OCT', value : { a : 102, } },{ month : '5 ,OCT', value : { a : 112, } },{ month : '6 ,OCT', value : { a : 126, } },{ month : '7 ,OCT', value : { a : 123, } },{ month : '8 ,OCT', value : { a : 109, } },{ month : '9 ,OCT', value : { a : 112, } },{ month : '10 ,OCT', value : { a : 130, } },{ month : '11 ,OCT', value : { a : 113, } },{ month : '12 ,OCT', value : { a : 115, } },{ month : '13 ,OCT', value : { a : 106, } },{ month : '14 ,OCT', value : { a : 101, } },{ month : '15 ,OCT', value : { a : 109, } },{ month : '16 ,OCT', value : { a : 103, } },{ month : '17 ,OCT', value : { a : 128, } },{ month : '18 ,OCT', value : { a : 129, } },{ month : '19 ,OCT', value : { a : 124, } },{ month : '20 ,OCT', value : { a : 116, } },{ month : '21 ,OCT', value : { a : 118, } },{ month : '22 ,OCT', value : { a : 129, } },{ month : '23 ,OCT', value : { a : 111, } },{ month : '24 ,OCT', value : { a : 113, } },{ month : '25 ,OCT', value : { a : 124, } },{ month : '26 ,OCT', value : { a : 123, } },{ month : '27 ,OCT', value : { a : 104, } },{ month : '28 ,OCT', value : { a : 117, } },{ month : '29 ,OCT', value : { a : 117, } },{ month : '30 ,OCT', value : { a : 120, } },{ month : '31 ,OCT', value : { a : 122, } },{ month : '1 ,NOV', value : { a : 82, } },{ month : '2 ,NOV', value : { a : 108, } },{ month : '3 ,NOV', value : { a : 102, } },{ month : '4 ,NOV', value : { a : 105, } },{ month : '5 ,NOV', value : { a : 86, } },{ month : '6 ,NOV', value : { a : 106, } },{ month : '7 ,NOV', value : { a : 106, } },{ month : '8 ,NOV', value : { a : 83, } },{ month : '9 ,NOV', value : { a : 98, } },{ month : '10 ,NOV', value : { a : 88, } },{ month : '11 ,NOV', value : { a : 95, } },{ month : '12 ,NOV', value : { a : 85, } },{ month : '13 ,NOV', value : { a : 102, } },{ month : '14 ,NOV', value : { a : 92, } },{ month : '15 ,NOV', value : { a : 86, } },{ month : '16 ,NOV', value : { a : 108, } },{ month : '17 ,NOV', value : { a : 91, } },{ month : '18 ,NOV', value : { a : 103, } },{ month : '19 ,NOV', value : { a : 102, } },{ month : '20 ,NOV', value : { a : 93, } },{ month : '21 ,NOV', value : { a : 109, } },{ month : '22 ,NOV', value : { a : 101, } },{ month : '23 ,NOV', value : { a : 105, } },{ month : '24 ,NOV', value : { a : 92, } },{ month : '25 ,NOV', value : { a : 105, } },{ month : '26 ,NOV', value : { a : 100, } },{ month : '27 ,NOV', value : { a : 81, } },{ month : '28 ,NOV', value : { a : 110, } },{ month : '29 ,NOV', value : { a : 95, } },{ month : '30 ,NOV', value : { a : 107, } },{ month : '1 ,DEC', value : { a : 112, } },{ month : '2 ,DEC', value : { a : 110, } },{ month : '3 ,DEC', value : { a : 105, } },{ month : '4 ,DEC', value : { a : 82, } },{ month : '5 ,DEC', value : { a : 105, } },{ month : '6 ,DEC', value : { a : 88, } },{ month : '7 ,DEC', value : { a : 111, } },{ month : '8 ,DEC', value : { a : 114, } },{ month : '9 ,DEC', value : { a : 111, } },{ month : '10 ,DEC', value : { a : 91, } },{ month : '11 ,DEC', value : { a : 118, } },{ month : '12 ,DEC', value : { a : 88, } },{ month : '13 ,DEC', value : { a : 86, } },{ month : '14 ,DEC', value : { a : 120, } },{ month : '15 ,DEC', value : { a : 89, } },{ month : '16 ,DEC', value : { a : 103, } },{ month : '17 ,DEC', value : { a : 92, } },{ month : '18 ,DEC', value : { a : 107, } },{ month : '19 ,DEC', value : { a : 93, } },{ month : '20 ,DEC', value : { a : 99, } },{ month : '21 ,DEC', value : { a : 84, } },{ month : '22 ,DEC', value : { a : 87, } },{ month : '23 ,DEC', value : { a : 84, } },{ month : '24 ,DEC', value : { a : 117, } },{ month : '25 ,DEC', value : { a : 94, } },{ month : '26 ,DEC', value : { a : 114, } },{ month : '27 ,DEC', value : { a : 99, } },{ month : '28 ,DEC', value : { a : 82, } },{ month : '29 ,DEC', value : { a : 100, } },{ month : '30 ,DEC', value : { a : 116, } },{ month : '31 ,DEC', value : { a : 94, } },
+			];
+			var ainstruction3 = {
+				id : "a3rd",
+				container : "a_cntnr3",
+				title : "Product Trends by Year",
+				width : 0,
+				height : 0,
+				paddingx : 0,
+				paddingy : 0,
+				axis_color : "#0e66a9",
+				x_axis_name : "Month",
+				y_axis_name : "",
+				x_division_no : "12",//"" means Number of data
+				y_division_no : "10",//"" means Number of data
+				path_no : 1,
+				type : "tiny",
+				main_title : false,
+				icon : false,
+				x_axis : false,
+				x_axis_division : false,
+				x_axis_title : false,
+				x_axis_label : false,
+				y_axis : false,
+				y_axis_division : true,
+				y_axis_title : true,
+				y_axis_label : false,
+				x_axis_hover_design : false,
+				y_axis_hover_design : false,
+				popup_design : false,
+				popup_footer_design : false,
+				select_area : false,
+			};
+			apath_detail3 = [{
+				name : "Laptop",
+				color : "#0e66a9",
+				type : ["line_area","line_path"],
+				stroke : [0, 1],
+				circle : true,
+				circle_zoom_out : 0,
+				circle_zoom_in : 4,
+				label : false,
+			}];			
+			check(adata3, ainstruction3, apath_detail3);	
+			
+			/////////////////////////// 4 ////////////////////////////////
+			var adata4 = [
+				{ month : '1 ,JAN', value : { a : 13, } },{ month : '2 ,JAN', value : { a : 24, } },{ month : '3 ,JAN', value : { a : 34, } },{ month : '4 ,JAN', value : { a : 15, } },{ month : '5 ,JAN', value : { a : 38, } },{ month : '6 ,JAN', value : { a : 34, } },{ month : '7 ,JAN', value : { a : 42, } },{ month : '8 ,JAN', value : { a : 25, } },{ month : '9 ,JAN', value : { a : 31, } },{ month : '10 ,JAN', value : { a : 22, } },{ month : '11 ,JAN', value : { a : 39, } },{ month : '12 ,JAN', value : { a : 26, } },{ month : '13 ,JAN', value : { a : 29, } },{ month : '14 ,JAN', value : { a : 30, } },{ month : '15 ,JAN', value : { a : 11, } },{ month : '16 ,JAN', value : { a : 5, } },{ month : '17 ,JAN', value : { a : 19, } },{ month : '18 ,JAN', value : { a : 13, } },
+			];
+			var ainstruction4 = {
+				id : "a4th",
+				container : "a_cntnr4",
+				title : "Product Trends by Month",
+				width : 0,
+				height : 0,
+				paddingx : 0,
+				paddingy : 0,
+				axis_color : "#0e66a9",
+				x_axis_name : "Month",
+				y_axis_name : "",
+				x_division_no : "12",//"" means Number of data
+				y_division_no : "8",//"" means Number of data
+				path_no : 1,
+				type : "tiny",
+				main_title : false,
+				icon : false,
+				x_axis : false,
+				x_axis_division : false,
+				x_axis_title : false,
+				x_axis_label : false,
+				y_axis : false,
+				y_axis_division : true,
+				y_axis_title : true,
+				y_axis_label : false,
+				x_axis_hover_design : false,
+				y_axis_hover_design : false,
+				popup_design : false,
+				popup_footer_design : false,
+				select_area : false,
+			};
+			apath_detail4 = [{
+				name : "Laptop",
+				color : "#9e003d",
+				type : ["stepline_area","stepline_path"],
+				stroke : [0, 3],
+				circle : true,
+				circle_zoom_out : 0,
+				circle_zoom_in : 3,
+				label : false,
+			}];
+			
+			check(adata4, ainstruction4, apath_detail4);	
+			
+			///////////////////////////     9    ///////////////////////////
+			var a_data9 = [
+					{ month : 'JAN', value : { a : 11, b : -15, } },{ month : 'FEB', value : { a : 0, b : 6, } },{ month : 'MAR', value : { a : 0, b : 0, } },{ month : 'APR', value : { a : 15, b : -3, } },{ month : 'MAY', value : { a : 46, b : 12, } },{ month : 'JUN', value : { a : 25, b : 12, } },{ month : 'JUL', value : { a : -6, b : -13, } },{ month : 'AUG', value : { a : 4, b : 6, } },{ month : 'SEP', value : { a : 26, b : 8, } },{ month : 'OCT', value : { a : 12, b : -18, } },{ month : 'NOV', value : { a : 5, b : 17, } },{ month : 'DEC', value : { a : 21, b : 1, } },
+				];
+			var a_instruction9 = {
+				id : "a9th",
+				container : "a_cntnr9",
+				title : "",
+				width : 0,
+				height : 0,
+				paddingx : 0,
+				paddingy : 0,
+				axis_color : "#0e66a9",
+				x_axis_name : "Month",
+				y_axis_name : "",
+				x_division_no : "4",//"" means Number of data
+				y_division_no : "8",//"" means Number of data
+				path_no : 2,
+				type : "tiny",
+				main_title : false,
+				icon : false,
+				x_axis : false,
+				x_axis_division : false,
+				x_axis_title : false,
+				x_axis_label : false,
+				y_axis : false,
+				y_axis_division : true,
+				y_axis_title : true,
+				y_axis_label : false,
+				x_axis_hover_design : false,
+				y_axis_hover_design : false,
+				popup_design : false,
+				popup_footer_design : false,
+				select_area : false,
+			};
+			a_path_detail9 = [{
+				name : "Normal",
+				color : "#007c00",
+				type : ["round_area","round_path"],
+				stroke : [0, 2],
+				circle : true,
+				circle_zoom_out : 0,
+				circle_zoom_in : 3,
+				label : true,
+			},{
+				name : "Coldest",
+				color : "#03a9f4",
+				type : ["round_area","round_path"],
+				stroke : [0, 2],
+				circle : true,
+				circle_zoom_out : 2,
+				circle_zoom_in : 3,
+				label : false,
+			}];
+			
+			check(a_data9, a_instruction9, a_path_detail9);	
+			////////////////////// 5 ////////////////////////////
+			var adata5 = [{ month : 'JAN', value : { a : 2.5, b : 7.0, c : -2.0, } },{ month : 'FEB', value : { a : 3.8, b : 8.2, c : 3.4, } },{ month : 'MAR', value : { a : 8.8, b : 14.1, c : -0.7, } },{ month : 'APR', value : { a : 14.2, b : 20.5, c : 7.9, } },{ month : 'MAY', value : { a : 17.7, b : 24.5, c : 10.8, } },{ month : 'JUN', value : { a : 22.3, b : 29.6, c : 14.9, } },{ month : 'JUL', value : { a : 24.1, b : 30.1, c : 18.1, } },{ month : 'AUG', value : { a : 23.5, b : 29.6, c : 17.5, } },{ month : 'SEP', value : { a : 19.8, b : 27.4, c : 12.1, } },{ month : 'OCT', value : { a : 14.1, b : 22.4, c : 5.8, } },{ month : 'NOV', value : { a : 8.1, b : 15.1, c : 0.9, } },{ month : 'DEC', value : { a : 3.4, b : 8.2, c : -1.5, } }
+			];
+			var ainstruction5 = {
+				id : "a5th",
+				container : "a_cntnr5",
+				title : "Weather statistics for Jammu and Kashmir",
+				width : 0,
+				height : 0,
+				paddingx : 0,
+				paddingy : 0,
+				axis_color : "#0e66a9",
+				x_axis_name : "Month",
+				y_axis_name : "",
+				x_division_no : "4",//"" means Number of data
+				y_division_no : "8",//"" means Number of data
+				path_no : 3,
+				type : "tiny",
+				main_title : false,
+				icon : false,
+				x_axis : false,
+				x_axis_division : false,
+				x_axis_title : false,
+				x_axis_label : false,
+				y_axis : false,
+				y_axis_division : true,
+				y_axis_title : true,
+				y_axis_label : false,
+				x_axis_hover_design : false,
+				y_axis_hover_design : false,
+				popup_design : false,
+				popup_footer_design : false,
+				select_area : false,
+			};
+			apath_detail5 = [{
+				name : "Normal",
+				color : "#0e66a9",
+				type : ["line_area","line_path"],
+				stroke : [0, 3],
+				circle : true,
+				circle_zoom_out : 0,
+				circle_zoom_in : 3,
+				label : true,
+			},{
+				name : "Warmest",
+				color : "#ff9800",
+				type : ["line_area","line_path"],
+				stroke : [0, 3],
+				circle : true,
+				circle_zoom_out : 0,
+				circle_zoom_in : 3,
+				label : true,
+			},{
+				name : "Coldest",
+				color : "#03a9f4",
+				type : ["line_area","line_path"],
+				stroke : [0, 3],
+				circle : true,
+				circle_zoom_out : 0,
+				circle_zoom_in : 3,
+				label : true,
+			}];
+
+			check(adata5, ainstruction5, apath_detail5);
+			
+			//////////////////// 6 ///////////////////
+			var adata6 = [
+				{ month : '1 ,JAN', value : { a : 7, } },{ month : '2 ,JAN', value : { a : 10, } },{ month : '3 ,JAN', value : { a : 12, } },{ month : '4 ,JAN', value : { a : 18, } },{ month : '5 ,JAN', value : { a : 13, } },{ month : '6 ,JAN', value : { a : 25, } },{ month : '7 ,JAN', value : { a : 28, } },{ month : '8 ,JAN', value : { a : 20, } },{ month : '9 ,JAN', value : { a : 26, } },{ month : '10 ,JAN', value : { a : 31, } },{ month : '11 ,JAN', value : { a : 35, } },{ month : '12 ,JAN', value : { a : 30, } },{ month : '13 ,JAN', value : { a : 31, } },{ month : '14 ,JAN', value : { a : 42, } },{ month : '15 ,JAN', value : { a : 40, } },{ month : '16 ,JAN', value : { a : 43, } },{ month : '17 ,JAN', value : { a : 47, } },{ month : '18 ,JAN', value : { a : 35, } },{ month : '19 ,JAN', value : { a : 43, } },{ month : '20 ,JAN', value : { a : 40, } },{ month : '21 ,JAN', value : { a : 42, } },{ month : '22 ,JAN', value : { a : 38, } },{ month : '23 ,JAN', value : { a : 36, } },{ month : '24 ,JAN', value : { a : 39, } },{ month : '25 ,JAN', value : { a : 36, } },{ month : '26 ,JAN', value : { a : 33, } },{ month : '27 ,JAN', value : { a : 45, } },{ month : '28 ,JAN', value : { a : 49, } },{ month : '29 ,JAN', value : { a : 47, } },{ month : '30 ,JAN', value : { a : 48, } },{ month : '31 ,JAN', value : { a : 52, } },
+				];
+			var ainstruction6 = {
+				id : "a6th",
+				container : "a_cntnr6",
+				title : "Product Trends by Month",
+				width : 0,
+				height : 0,
+				paddingx : 0,
+				paddingy : 0,
+				axis_color : "#0e66a9",
+				x_axis_name : "Month",
+				y_axis_name : "",
+				x_division_no : "12",//"" means Number of data
+				y_division_no : "10",//"" means Number of data
+				path_no : 1,
+				type : "tiny",
+				main_title : false,
+				icon : false,
+				x_axis : false,
+				x_axis_division : false,
+				x_axis_title : false,
+				x_axis_label : false,
+				y_axis : false,
+				y_axis_division : true,
+				y_axis_title : true,
+				y_axis_label : false,
+				x_axis_hover_design : false,
+				y_axis_hover_design : false,
+				popup_design : false,
+				popup_footer_design : false,
+				select_area : false,
+				
+				//anotation
+				annotations: {
+					yaxis: [{
+						y: 33,
+						borderColor: '#da3b01',
+						label: {
+						  borderColor: '#da3b01',
+						  style: {
+							color: '#fff',
+							background: '#da3b01',
+						  },
+						  text: 'Growth',
+						}
+					 }],
+					xaxis: [{
+						x1: "22 ,JAN",
+						x2: "28 ,JAN",
+						borderColor: '#00b7c3',
+						fillColor: '#00b7c3',
+						opacity: .2,
+						label: {
+						  borderColor: '#00b7c3',
+						  style: {
+							fontSize: '10px',
+							color: '#fff',
+							background: '#00b7c3',
+						  },
+						  offsetY: -10,
+						  text: 'Support',
+						}
+					},],
+					points: [{
+						x: "16 ,JAN",
+						y: 43,
+						marker: {
+						  fillColor: '#fff',
+						  strokeColor: '#bf0077',
+						  radius: 8,
+						  strokeWidth: 2,
+						},
+						label: {
+						  borderColor: '#bf0077',
+						  style: {
+							color: '#fff',
+							background: '#bf0077',
+						  },					
+						  text: 'New model',
+						}
+					}],
+					
+				},
+			};
+			apath_detail6 = [{
+				name : "Laptop",
+				color : "#00aeeb",
+				type : ["line_area","line_path"],
+				stroke : [0, 1],
+				circle : true,
+				circle_zoom_out : 0,
+				circle_zoom_in : 3,
+				label : false,
+			}];
+			
+			check(adata6, ainstruction6, apath_detail6);	
+			
+			///////////////////////// 7 //////////////////////////
+			var adata7 = [
+				{ month : '1 ,JAN', value : { a : -7, } },{ month : '2 ,JAN', value : { a : -10, } },{ month : '3 ,JAN', value : { a : -9, } },{ month : '4 ,JAN', value : { a : -8, } },{ month : '5 ,JAN', value : { a : 6, } },{ month : '6 ,JAN', value : { a : 25, } },{ month : '7 ,JAN', value : { a : 28, } },{ month : '8 ,JAN', value : { a : 20, } },{ month : '9 ,JAN', value : { a : 26, } },{ month : '10 ,JAN', value : { a : 31, } },{ month : '11 ,JAN', value : { a : 35, } },{ month : '12 ,JAN', value : { a : 30, } },{ month : '13 ,JAN', value : { a : 31, } },{ month : '14 ,JAN', value : { a : 42, } },{ month : '15 ,JAN', value : { a : 40, } },{ month : '16 ,JAN', value : { a : 43, } },{ month : '17 ,JAN', value : { a : 47, } },{ month : '18 ,JAN', value : { a : 35, } },{ month : '19 ,JAN', value : { a : 52, } },{ month : '20 ,JAN', value : { a : 53, } },{ month : '21 ,JAN', value : { a : 52, } },{ month : '22 ,JAN', value : { a : 38, } },{ month : '23 ,JAN', value : { a : 36, } },{ month : '24 ,JAN', value : { a : 39, } },{ month : '25 ,JAN', value : { a : 36, } },{ month : '26 ,JAN', value : { a : 33, } },{ month : '27 ,JAN', value : { a : 45, } },{ month : '28 ,JAN', value : { a : 49, } },{ month : '29 ,JAN', value : { a : 47, } },{ month : '30 ,JAN', value : { a : 48, } },{ month : '31 ,JAN', value : { a : 52, } },
+				];
+			var ainstruction7 = {
+				id : "a7th",
+				container : "a_cntnr7",
+				title : "Product Trends by Month",
+				width : 0,
+				height : 0,
+				paddingx : 0,
+				paddingy : 0,
+				axis_color : "#0e66a9",
+				x_axis_name : "Month",
+				y_axis_name : "",
+				x_division_no : "12",//"" means Number of data
+				y_division_no : "10",//"" means Number of data
+				path_no : 1,
+				type : "tiny",
+				main_title : false,
+				icon : false,
+				x_axis : false,
+				x_axis_division : false,
+				x_axis_title : false,
+				x_axis_label : false,
+				y_axis : false,
+				y_axis_division : true,
+				y_axis_title : true,
+				y_axis_label : false,
+				x_axis_hover_design : false,
+				y_axis_hover_design : false,
+				popup_design : false,
+				popup_footer_design : false,
+				select_area : false,
+				//anotation
+				annotations: {
+					yaxis: [{
+						y1: 20,
+						y2: 35,
+						borderColor: '#FEB019',
+						fillColor: '#FEB019',
+						opacity: 0.2,
+						label: {
+						  borderColor: '#FEB019',
+						  style: {
+							fontSize: '10px',
+							color: '#333',
+							background: '#FEB019',
+						  },
+						  text: 'Y-axis range',
+						}
+					}],
+					xaxis: [{
+						x: "28 ,JAN",
+						borderColor: '#775DD0',
+						label: {
+						  borderColor: '#775DD0',
+						  style: {
+							color: '#fff',
+							background: '#775DD0',
+						  },
+						  text: 'Anno Test',
+						}
+					}],
+					max: [{
+						marker: {
+						  fillColor: '#fff',
+						  strokeColor: 'red',
+						  radius: 8,
+						  strokeWidth: 2,
+						},
+						label: {
+						  borderColor: '#FF4560',
+						  style: {
+							color: '#fff',
+							background: '#FF4560',
+						  },					
+						  text: 'Max point',
+						}
+					}],
+					min: [{
+						marker: {
+						  fillColor: '#fff',
+						  strokeColor: '#00aeeb',
+						  radius: 8,
+						  strokeWidth: 2,
+						},
+						label: {
+						  borderColor: '#00aeeb',
+						  style: {
+							color: '#fff',
+							background: '#00aeeb',
+						  },					
+						  text: 'Min point',
+						}
+					}],
+				},
+			};
+			apath_detail7 = [{
+				name : "Laptop",
+				color : "#1e80c7",
+				type : ["line_area","line_path"],
+				stroke : [0, 2],
+				circle : true,
+				circle_zoom_out : 0,
+				circle_zoom_in : 5,
+				label : false,
+			}];
+			
+			check(adata7, ainstruction7, apath_detail7);	
+			
+			//////////////////////////////////// 8 //////////////////////////////////
+			var a_data8_1 = [
+				{ month : 'JAN', value : { a : 15, } },{ month : 'FEB', value : { a : 38, } },{ month : 'MAR', value : { a : 4, } },{ month : 'APR', value : { a : 28, } },{ month : 'MAY', value : { a : 31, } },{ month : 'JUN', value : { a : 14, } },{ month : 'JUL', value : { a : 27, } },{ month : 'AUG', value : { a : 48, } },{ month : 'SEP', value : { a : 11, } },{ month : 'OCT', value : { a : 28, } },{ month : 'NOV', value : { a : 32, } },{ month : 'DEC', value : { a : 25, } },
+				
+			];
+			var a_instruction8_1 = {
+				id : "a8th1",
+				sync_id : "async1",
+				container : "a_cntnr8_1",
+				type : "tiny",
+				title : "Line Syncing chart",
+				width : 360,
+				height : 64,
+				paddingx : 1,
+				paddingy : 1,
+				axis_color : "#0e66a9",
+				x_axis_name : "Month",
+				y_axis_name : "",
+				x_division_no : "12",//"" means Number of data
+				y_division_no : "4",//"" means Number of data
+				path_no : 1,
+				main_title : false,
+				icon : false,
+				x_axis : false,
+				x_axis_division : false,
+				x_axis_title : false,
+				x_axis_label : false,
+				y_axis : false,
+				y_axis_division : true,
+				y_axis_title : true,
+				y_axis_label : false,
+				x_axis_hover_design : false,
+				y_axis_hover_design : false,
+				popup_design : false,
+				popup_footer_design : false,
+				select_area : false,
+			};
+			a_path_detail8_1 = [{
+				name : "Line",
+				color : "#0e66a9",
+				type : ["line_area"],
+				stroke : [ 0],
+				circle : true,
+				circle_zoom_out : 1,
+				circle_zoom_in : 2,
+				label : false,
+			}];
+			
+			check(a_data8_1, a_instruction8_1, a_path_detail8_1);			
+			
+			var a_data8_2 = [
+				{ month : 'JAN', value : { a : 4, } },{ month : 'FEB', value : { a : 30, } },{ month : 'MAR', value : { a : 7, } },{ month : 'APR', value : { a : 22, } },{ month : 'MAY', value : { a : 2, } },{ month : 'JUN', value : { a : 44, } },{ month : 'JUL', value : { a : 30, } },{ month : 'AUG', value : { a : 28, } },{ month : 'SEP', value : { a : 12, } },{ month : 'OCT', value : { a : 11, } },{ month : 'NOV', value : { a : 48, } },{ month : 'DEC', value : { a : 10, } },
+			];
+			var a_instruction8_2 = {
+				id : "a8th2",
+				sync_id : "async1",
+				container : "a_cntnr8_2",
+				type : "tiny",
+				title : "Weather statistics for Jammu and Kashmir",
+				width : 360,
+				height : 64,
+				paddingx : 1,
+				paddingy : 1,
+				axis_color : "#007c00",
+				x_axis_name : "Month",
+				y_axis_name : "",
+				x_division_no : "5",//"" means Number of data
+				y_division_no : "4",//"" means Number of data
+				path_no : 1,
+				main_title : false,
+				icon : false,
+				x_axis : false,
+				x_axis_division : false,
+				x_axis_title : false,
+				x_axis_label : false,
+				y_axis : false,
+				y_axis_division : true,
+				y_axis_title : true,
+				y_axis_label : false,
+				x_axis_hover_design : false,
+				y_axis_hover_design : false,
+				popup_design : false,
+				popup_footer_design : false,
+				select_area : false,
+			};
+			a_path_detail8_2 = [{
+				name : "Round",
+				color : "#007c00",
+				type : ["round_area", "round_path"],
+				stroke : [0, 1],
+				circle : true,
+				circle_zoom_out : 0,
+				circle_zoom_in : 2,
+				label : true,
+			}];
+
+			check(a_data8_2, a_instruction8_2, a_path_detail8_2);		
+			
+			
+			var a_data8_3 = [
+				{ month : 'JAN', value : { a : 29, b : 61, } },{ month : 'FEB', value : { a : 41, b : 14, } },{ month : 'MAR', value : { a : 41, b : 50, } },{ month : 'APR', value : { a : 44, b : 68, } },{ month : 'MAY', value : { a : 26, b : 44, } },{ month : 'JUN', value : { a : 41, b : 67, } },{ month : 'JUL', value : { a : 29, b : 13, } },{ month : 'AUG', value : { a : 10, b : 66, } },{ month : 'SEP', value : { a : 26, b : 39, } },{ month : 'OCT', value : { a : 47, b : 55, } },{ month : 'NOV', value : { a : 33, b : 97, } },{ month : 'DEC', value : { a : 25, b : 87, } },
+			];
+			var a_instruction8_3 = {
+				id : "a8th3",
+				sync_id : "async1",
+				container : "a_cntnr8_3",
+				type : "tiny",
+				title : "Weather statistics for Jammu and Kashmir",
+				width : 360,
+				height : 64,
+				paddingx : 1,
+				paddingy : 1,
+				axis_color : "#bf0077",
+				x_axis_name : "Month",
+				y_axis_name : "",
+				x_division_no : "5",//"" means Number of data
+				y_division_no : "4",//"" means Number of data
+				path_no : 2,
+				main_title : false,
+				icon : false,
+				x_axis : false,
+				x_axis_division : false,
+				x_axis_title : false,
+				x_axis_label : false,
+				y_axis : false,
+				y_axis_division : true,
+				y_axis_title : true,
+				y_axis_label : false,
+				x_axis_hover_design : false,
+				y_axis_hover_design : false,
+				popup_design : false,
+				popup_footer_design : false,
+				select_area : false,
+			};
+			a_path_detail8_3 = [{
+				name : "Round",
+				color : "#ff0000",
+				type : ["round_area", "round_path"],
+				stroke : [0, 1],
+				circle : true,
+				circle_zoom_out : 0,
+				circle_zoom_in : 2,
+				label : true,
+			},{
+				name : "Line",
+				color : "#bf0077",
+				type : ["line_area"],
+				stroke : [3],
+				circle : true,
+				circle_zoom_out : 1,
+				circle_zoom_in : 2,
+				label : false,
+			}];
+
+			check(a_data8_3, a_instruction8_3, a_path_detail8_3);
+			
+			
+			/////////////////////////////////// Mixed Chart /////////////////////////////////
+			/////////////////////////////////// 1 ///////////////////////////////////
+			var mdata1 = [
+			{ month : '1 ,JAN', value : { a : 96, b : 99, c : 44, } },{ month : '2 ,JAN', value : { a : 86, b : 131, c : 28, } },{ month : '3 ,JAN', value : { a : 80, b : 136, c : 41, } },{ month : '4 ,JAN', value : { a : 88, b : 90, c : 32, } },{ month : '5 ,JAN', value : { a : 98, b : 136, c : 41, } },{ month : '6 ,JAN', value : { a : 85, b : 114, c : 46, } },{ month : '7 ,JAN', value : { a : 57, b : 115, c : 34, } },{ month : '8 ,JAN', value : { a : 69, b : 136, c : 26, } },{ month : '9 ,JAN', value : { a : 86, b : 112, c : 42, } },{ month : '10 ,JAN', value : { a : 69, b : 107, c : 39, } },{ month : '11 ,JAN', value : { a : 68, b : 147, c : 49, } },{ month : '12 ,JAN', value : { a : 71, b : 136, c : 26, } },{ month : '13 ,JAN', value : { a : 73, b : 131, c : 44, } },{ month : '14 ,JAN', value : { a : 95, b : 130, c : 44, } },{ month : '15 ,JAN', value : { a : 83, b : 118, c : 42, } },{ month : '16 ,JAN', value : { a : 82, b : 100, c : 38, } },{ month : '17 ,JAN', value : { a : 67, b : 137, c : 36, } },{ month : '18 ,JAN', value : { a : 77, b : 106, c : 49, } },{ month : '19 ,JAN', value : { a : 71, b : 92, c : 27, } },{ month : '20 ,JAN', value : { a : 55, b : 95, c : 27, } },{ month : '21 ,JAN', value : { a : 91, b : 99, c : 40, } },{ month : '22 ,JAN', value : { a : 61, b : 108, c : 35, } },{ month : '23 ,JAN', value : { a : 72, b : 104, c : 26, } },{ month : '24 ,JAN', value : { a : 80, b : 95, c : 42, } },{ month : '25 ,JAN', value : { a : 67, b : 112, c : 32, } },{ month : '26 ,JAN', value : { a : 94, b : 124, c : 44, } },{ month : '27 ,JAN', value : { a : 99, b : 98, c : 47, } },{ month : '28 ,JAN', value : { a : 72, b : 107, c : 47, } },{ month : '29 ,JAN', value : { a : 68, b : 122, c : 27, } },{ month : '30 ,JAN', value : { a : 61, b : 140, c : 28, } },{ month : '31 ,JAN', value : { a : 65, b : 135, c : 39, } },
+			];
+			var minstruction1 = {
+				id : "m1st",
+				container : "m_cntnr1",
+				title : "Mixed chart",
+				width : 0,
+				height : 0,
+				paddingx : 0,
+				paddingy : 0,
+				axis_color : "#0e66a9",
+				x_axis_name : "",
+				y_axis_name : "",
+				x_division_no : "5",//"" means Number of data
+				y_division_no : "8",//"" means Number of data
+				path_no : 3,
+				type : "tiny",
+				main_title : false,
+				icon : false,
+				x_axis : false,
+				x_axis_division : false,
+				x_axis_title : false,
+				x_axis_label : false,
+				y_axis : false,
+				y_axis_division : true,
+				y_axis_title : true,
+				y_axis_label : false,
+				x_axis_hover_design : false,
+				y_axis_hover_design : false,
+				popup_design : false,
+				popup_footer_design : false,
+				select_area : false,
+			};
+			mpath_detail1 = [{
+				name : "Normal",
+				color : "#0e66a9",
+				type : ["line_path"],
+				stroke : [2],
+				circle : true,
+				circle_zoom_out : 0,
+				circle_zoom_in : 3,
+				label : true,
+			},{
+				name : "Warmest",
+				color : "#ff9800",
+				type : ["round_path"],
+				stroke : [2],
+				circle : true,
+				circle_zoom_out : 2,
+				circle_zoom_in : 3,
+				label : false,
+			},{
+				name : "Coldest",
+				color : "#03a9f4",
+				type : ["stepline_path"],
+				stroke : [3],
+				circle : true,
+				circle_zoom_out : 0,
+				circle_zoom_in : 3,
+				label : false,
+			}];
+			check(mdata1, minstruction1, mpath_detail1);	
+			
+			////////////////////////// 2 ///////////////////////////
+			var mdata2 = [
+				{ month : '1 ,JAN', value : { a : 60, b : 137, c : 36, } },{ month : '2 ,JAN', value : { a : 56, b : 142, c : 40, } },{ month : '3 ,JAN', value : { a : 94, b : 122, c : 45, } },{ month : '4 ,JAN', value : { a : 76, b : 133, c : 34, } },{ month : '5 ,JAN', value : { a : 51, b : 119, c : 50, } },{ month : '6 ,JAN', value : { a : 77, b : 92, c : 42, } },{ month : '7 ,JAN', value : { a : 80, b : 133, c : 29, } },{ month : '8 ,JAN', value : { a : 71, b : 145, c : 38, } },{ month : '9 ,JAN', value : { a : 82, b : 96, c : 37, } },{ month : '10 ,JAN', value : { a : 83, b : 140, c : 34, } },{ month : '11 ,JAN', value : { a : 58, b : 125, c : 42, } },{ month : '12 ,JAN', value : { a : 97, b : 150, c : 47, } },{ month : '13 ,JAN', value : { a : 53, b : 135, c : 37, } },{ month : '14 ,JAN', value : { a : 58, b : 112, c : 33, } },{ month : '15 ,JAN', value : { a : 74, b : 94, c : 32, } },{ month : '16 ,JAN', value : { a : 57, b : 141, c : 39, } },{ month : '17 ,JAN', value : { a : 76, b : 92, c : 34, } },{ month : '18 ,JAN', value : { a : 87, b : 94, c : 45, } },{ month : '19 ,JAN', value : { a : 61, b : 117, c : 37, } },{ month : '20 ,JAN', value : { a : 62, b : 142, c : 26, } },{ month : '21 ,JAN', value : { a : 65, b : 119, c : 37, } },{ month : '22 ,JAN', value : { a : 87, b : 108, c : 49, } },{ month : '23 ,JAN', value : { a : 50, b : 109, c : 41, } },{ month : '24 ,JAN', value : { a : 94, b : 148, c : 32, } },{ month : '25 ,JAN', value : { a : 70, b : 126, c : 36, } },{ month : '26 ,JAN', value : { a : 65, b : 111, c : 37, } },{ month : '27 ,JAN', value : { a : 66, b : 93, c : 28, } },{ month : '28 ,JAN', value : { a : 86, b : 110, c : 27, } },{ month : '29 ,JAN', value : { a : 94, b : 136, c : 43, } },{ month : '30 ,JAN', value : { a : 64, b : 138, c : 42, } },{ month : '31 ,JAN', value : { a : 69, b : 91, c : 49, } },
+			];
+			var minstruction2 = {				
+				id : "m2nd",
+				container : "m_cntnr2",
+				title : "Mixed chart",
+				width : 0,
+				height : 0,
+				paddingx : 0,
+				paddingy : 0,
+				axis_color : "#0e66a9",
+				x_axis_name : "",
+				y_axis_name : "",
+				x_division_no : "5",//"" means Number of data
+				y_division_no : "8",//"" means Number of data
+				path_no : 3,
+				type : "tiny",
+				main_title : false,
+				icon : false,
+				x_axis : false,
+				x_axis_division : false,
+				x_axis_title : false,
+				x_axis_label : false,
+				y_axis : false,
+				y_axis_division : true,
+				y_axis_title : true,
+				y_axis_label : false,
+				x_axis_hover_design : false,
+				y_axis_hover_design : false,
+				popup_design : false,
+				popup_footer_design : false,
+				select_area : false,
+			};
+			mpath_detail2 = [{
+				name : "Normal",
+				color : "#770069",
+				type : ["line_area","line_path",],
+				stroke : [0,2],
+				circle : true,
+				circle_zoom_out : 0,
+				circle_zoom_in : 3,
+				label : true,
+			},{
+				name : "Warmest",
+				color : "#0e66a9",
+				type : ["round_area","round_path"],
+				stroke : [0,1],
+				circle : true,
+				circle_zoom_out : 2,
+				circle_zoom_in : 3,
+				label : false,
+			},{
+				name : "Coldest",
+				color : "#03a9f4",
+				type : ["stepline_area","stepline_path"],
+				stroke : [0,0],
+				circle : true,
+				circle_zoom_out : 0,
+				circle_zoom_in : 3,
+				label : false,
+			}];
+			
+			check(mdata2, minstruction2, mpath_detail2);	
+			
+			/////////////////////////// 3 ///////////////////////////////
+			var mdata3 = [
+				{ month : '1 ,JAN', value : { a : 95, b : 128, c : 27, } },{ month : '2 ,JAN', value : { a : 54, b : 93, c : 38, } },{ month : '3 ,JAN', value : { a : 77, b : 103, c : 38, } },{ month : '4 ,JAN', value : { a : 64, b : 66, c : 30, } },{ month : '5 ,JAN', value : { a : 94, b : 70, c : 37, } },{ month : '6 ,JAN', value : { a : 52, b : 83, c : 28, } },{ month : '7 ,JAN', value : { a : 92, b : 75, c : 45, } },{ month : '8 ,JAN', value : { a : 65, b : 141, c : 39, } },{ month : '9 ,JAN', value : { a : 60, b : 65, c : 28, } },{ month : '10 ,JAN', value : { a : 54, b : 104, c : 44, } },{ month : '11 ,JAN', value : { a : 64, b : 113, c : 45, } },{ month : '12 ,JAN', value : { a : 82, b : 79, c : 49, } },{ month : '13 ,JAN', value : { a : 63, b : 93, c : 36, } },{ month : '14 ,JAN', value : { a : 85, b : 70, c : 40, } },{ month : '15 ,JAN', value : { a : 85, b : 88, c : 30, } },{ month : '16 ,JAN', value : { a : 89, b : 58, c : 38, } },{ month : '17 ,JAN', value : { a : 95, b : 141, c : 39, } },{ month : '18 ,JAN', value : { a : 51, b : 105, c : 26, } },{ month : '19 ,JAN', value : { a : 80, b : 83, c : 50, } },{ month : '20 ,JAN', value : { a : 86, b : 61, c : 44, } },{ month : '21 ,JAN', value : { a : 67, b : 44, c : 39, } },{ month : '22 ,JAN', value : { a : 69, b : 62, c : 32, } },{ month : '23 ,JAN', value : { a : 78, b : 106, c : 27, } },{ month : '24 ,JAN', value : { a : 83, b : 126, c : 33, } },{ month : '25 ,JAN', value : { a : 59, b : 122, c : 34, } },{ month : '26 ,JAN', value : { a : 98, b : 125, c : 28, } },{ month : '27 ,JAN', value : { a : 85, b : 70, c : 37, } },{ month : '28 ,JAN', value : { a : 68, b : 41, c : 42, } },{ month : '29 ,JAN', value : { a : 81, b : 89, c : 42, } },{ month : '30 ,JAN', value : { a : 67, b : 104, c : 28, } },{ month : '31 ,JAN', value : { a : 55, b : 80, c : 32, } },
+			];
+			var minstruction3 = {
+				id : "m3rd",
+				container : "m_cntnr3",
+				title : "Mixed chart",
+				width : 0,
+				height : 0,
+				paddingx : 0,
+				paddingy : 0,
+				axis_color : "#0e66a9",
+				x_axis_name : "",
+				y_axis_name : "",
+				x_division_no : "5",//"" means Number of data
+				y_division_no : "8",//"" means Number of data
+				path_no : 3,
+				type : "tiny",
+				main_title : false,
+				icon : false,
+				x_axis : false,
+				x_axis_division : false,
+				x_axis_title : false,
+				x_axis_label : false,
+				y_axis : false,
+				y_axis_division : true,
+				y_axis_title : true,
+				y_axis_label : false,
+				x_axis_hover_design : false,
+				y_axis_hover_design : false,
+				popup_design : false,
+				popup_footer_design : false,
+				select_area : false,
+			};
+			mpath_detail3 = [{
+				name : "Normal",
+				color : "#770069",
+				type : ["line_area"],
+				stroke : [0],
+				circle : true,
+				circle_zoom_out : 0,
+				circle_zoom_in : 3,
+				label : true,
+			},{
+				name : "Warmest",
+				color : "#0e66a9",
+				type : ["round_path"],
+				stroke : [3],
+				circle : true,
+				circle_zoom_out : 2,
+				circle_zoom_in : 3,
+				label : false,
+			},{
+				name : "Coldest",
+				color : "#ff0000",
+				type : ["stepline_path"],
+				stroke : [0],
+				circle : true,
+				circle_zoom_out : 3,
+				circle_zoom_in : 4,
+				label : false,
+			}];
+			
+			check(mdata3, minstruction3, mpath_detail3);	
+			
+			//////////////////////////////////// 4 //////////////////////////////////
+			var m_data8_1 = [
+				{ month : 'JAN', value : { a : 15, } },{ month : 'FEB', value : { a : 38, } },{ month : 'MAR', value : { a : 4, } },{ month : 'APR', value : { a : 28, } },{ month : 'MAY', value : { a : 31, } },{ month : 'JUN', value : { a : 14, } },{ month : 'JUL', value : { a : 27, } },{ month : 'AUG', value : { a : 48, } },{ month : 'SEP', value : { a : 11, } },{ month : 'OCT', value : { a : 28, } },{ month : 'NOV', value : { a : 32, } },{ month : 'DEC', value : { a : 25, } },
+				
+			];
+			var m_instruction8_1 = {
+				id : "m8th1",
+				sync_id : "msync1",
+				container : "m_cntnr8_1",
+				type : "tiny",
+				title : "Line Syncing chart",
+				width : 360,
+				height : 64,
+				paddingx : 1,
+				paddingy : 1,
+				axis_color : "#0e66a9",
+				x_axis_name : "Month",
+				y_axis_name : "",
+				x_division_no : "12",//"" means Number of data
+				y_division_no : "4",//"" means Number of data
+				path_no : 1,
+				main_title : false,
+				icon : false,
+				x_axis : false,
+				x_axis_division : false,
+				x_axis_title : false,
+				x_axis_label : false,
+				y_axis : false,
+				y_axis_division : true,
+				y_axis_title : true,
+				y_axis_label : false,
+				x_axis_hover_design : false,
+				y_axis_hover_design : false,
+				popup_design : false,
+				popup_footer_design : false,
+				select_area : false,
+			};
+			m_path_detail8_1 = [{
+				name : "Line",
+				color : "#00aeeb",
+				type : ["round_path"],
+				stroke : [2],
+				circle : true,
+				circle_zoom_out : 1,
+				circle_zoom_in : 2,
+				label : false,
+			}];
+			
+			check(m_data8_1, m_instruction8_1, m_path_detail8_1);			
+			
+			var m_data8_2 = [
+				{ month : 'JAN', value : { a : 4, } },{ month : 'FEB', value : { a : 30, } },{ month : 'MAR', value : { a : 7, } },{ month : 'APR', value : { a : 22, } },{ month : 'MAY', value : { a : 2, } },{ month : 'JUN', value : { a : 44, } },{ month : 'JUL', value : { a : 30, } },{ month : 'AUG', value : { a : 28, } },{ month : 'SEP', value : { a : 12, } },{ month : 'OCT', value : { a : 11, } },{ month : 'NOV', value : { a : 48, } },{ month : 'DEC', value : { a : 10, } },
+			];
+			var m_instruction8_2 = {
+				id : "m8th2",
+				sync_id : "msync1",
+				container : "m_cntnr8_2",
+				type : "tiny",
+				title : "Weather statistics for Jammu and Kashmir",
+				width : 360,
+				height : 64,
+				paddingx : 1,
+				paddingy : 1,
+				axis_color : "#007c00",
+				x_axis_name : "Month",
+				y_axis_name : "",
+				x_division_no : "5",//"" means Number of data
+				y_division_no : "4",//"" means Number of data
+				path_no : 1,
+				main_title : false,
+				icon : false,
+				x_axis : false,
+				x_axis_division : false,
+				x_axis_title : false,
+				x_axis_label : false,
+				y_axis : false,
+				y_axis_division : true,
+				y_axis_title : true,
+				y_axis_label : false,
+				x_axis_hover_design : false,
+				y_axis_hover_design : false,
+				popup_design : false,
+				popup_footer_design : false,
+				select_area : false,
+			};
+			m_path_detail8_2 = [{
+				name : "Round",
+				color : "#bf0077",
+				type : ["line_area", "line_path"],
+				stroke : [0, 2],
+				circle : true,
+				circle_zoom_out : 0,
+				circle_zoom_in : 3,
+				label : true,
+			}];
+
+			check(m_data8_2, m_instruction8_2, m_path_detail8_2);		
+			
+			
+			var m_data8_3 = [
+				{ month : 'JAN', value : { a : 29, b : 61, } },{ month : 'FEB', value : { a : 41, b : 14, } },{ month : 'MAR', value : { a : 41, b : 50, } },{ month : 'APR', value : { a : 44, b : 68, } },{ month : 'MAY', value : { a : 26, b : 44, } },{ month : 'JUN', value : { a : 41, b : 67, } },{ month : 'JUL', value : { a : 29, b : 13, } },{ month : 'AUG', value : { a : 10, b : 66, } },{ month : 'SEP', value : { a : 26, b : 39, } },{ month : 'OCT', value : { a : 47, b : 55, } },{ month : 'NOV', value : { a : 33, b : 97, } },{ month : 'DEC', value : { a : 25, b : 87, } },
+			];
+			var m_instruction8_3 = {
+				id : "m8th3",
+				sync_id : "msync1",
+				container : "m_cntnr8_3",
+				type : "tiny",
+				title : "Weather statistics for Jammu and Kashmir",
+				width : 360,
+				height : 64,
+				paddingx : 1,
+				paddingy : 1,
+				axis_color : "#bf0077",
+				x_axis_name : "Month",
+				y_axis_name : "",
+				x_division_no : "5",//"" means Number of data
+				y_division_no : "4",//"" means Number of data
+				path_no : 2,
+				main_title : false,
+				icon : false,
+				x_axis : false,
+				x_axis_division : false,
+				x_axis_title : false,
+				x_axis_label : false,
+				y_axis : false,
+				y_axis_division : true,
+				y_axis_title : true,
+				y_axis_label : false,
+				x_axis_hover_design : false,
+				y_axis_hover_design : false,
+				popup_design : false,
+				popup_footer_design : false,
+				select_area : false,
+			};
+			m_path_detail8_3 = [{
+				name : "Round",
+				color : "#0e66a9",
+				type : ["round_area"],
+				stroke : [0],
+				circle : true,
+				circle_zoom_out : 0,
+				circle_zoom_in : 3,
+				label : true,
+			},{
+				name : "Line",
+				color : "#ff0000",
+				type : ["line_path"],
+				stroke : [1],
+				circle : true,
+				circle_zoom_out : 2,
+				circle_zoom_in : 3,
+				label : false,
+			}];
+
+			check(m_data8_3, m_instruction8_3, m_path_detail8_3);
+		}
+	</script>
+    </body>
+</html>

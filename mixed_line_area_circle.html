@@ -1,0 +1,126 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+		<link rel="stylesheet" href="css/main.css" />
+		<script src="js/raphael.js"></script>
+		<script src="js/line.js"></script>	
+		
+			
+    </head>
+    <body>
+		
+	<div class="header">
+		<a href="index.html">
+			<h3>Charts</h3>
+		</a>
+	</div>
+	<div class="container">
+		<div class="inner-container" >
+			<div class="menu" id="menu">
+				
+			</div>
+			<div class="graph">
+				<div class="graph-header"><a href="mixed_line_area_circle.html">Mixed chart  &#187; Line, Area & Circle Mixed chart</a></div>
+				<div class="inner-graph" id="cntnr1"></div>
+			</div>
+		</div>
+	</div>
+	<script>
+		window.onload = function(){			
+			var data = [
+				{ month : '1 ,JAN', value : { a : 95, b : 128, c : 27, } },{ month : '2 ,JAN', value : { a : 54, b : 93, c : 38, } },{ month : '3 ,JAN', value : { a : 77, b : 103, c : 38, } },{ month : '4 ,JAN', value : { a : 64, b : 66, c : 30, } },{ month : '5 ,JAN', value : { a : 94, b : 70, c : 37, } },{ month : '6 ,JAN', value : { a : 52, b : 83, c : 28, } },{ month : '7 ,JAN', value : { a : 92, b : 75, c : 45, } },{ month : '8 ,JAN', value : { a : 65, b : 141, c : 39, } },{ month : '9 ,JAN', value : { a : 60, b : 65, c : 28, } },{ month : '10 ,JAN', value : { a : 54, b : 104, c : 44, } },{ month : '11 ,JAN', value : { a : 64, b : 113, c : 45, } },{ month : '12 ,JAN', value : { a : 82, b : 79, c : 49, } },{ month : '13 ,JAN', value : { a : 63, b : 93, c : 36, } },{ month : '14 ,JAN', value : { a : 85, b : 70, c : 40, } },{ month : '15 ,JAN', value : { a : 85, b : 88, c : 30, } },{ month : '16 ,JAN', value : { a : 89, b : 58, c : 38, } },{ month : '17 ,JAN', value : { a : 95, b : 141, c : 39, } },{ month : '18 ,JAN', value : { a : 51, b : 105, c : 26, } },{ month : '19 ,JAN', value : { a : 80, b : 83, c : 50, } },{ month : '20 ,JAN', value : { a : 86, b : 61, c : 44, } },{ month : '21 ,JAN', value : { a : 67, b : 44, c : 39, } },{ month : '22 ,JAN', value : { a : 69, b : 62, c : 32, } },{ month : '23 ,JAN', value : { a : 78, b : 106, c : 27, } },{ month : '24 ,JAN', value : { a : 83, b : 126, c : 33, } },{ month : '25 ,JAN', value : { a : 59, b : 122, c : 34, } },{ month : '26 ,JAN', value : { a : 98, b : 125, c : 28, } },{ month : '27 ,JAN', value : { a : 85, b : 70, c : 37, } },{ month : '28 ,JAN', value : { a : 68, b : 41, c : 42, } },{ month : '29 ,JAN', value : { a : 81, b : 89, c : 42, } },{ month : '30 ,JAN', value : { a : 67, b : 104, c : 28, } },{ month : '31 ,JAN', value : { a : 55, b : 80, c : 32, } },
+			];
+			var instruction = {
+				id : "1st",
+				container : "cntnr1",
+				title : "Mixed chart",
+				width : 950,
+				height : 510,
+				paddingx : 40,
+				paddingy : 40,
+				axis_color : "#0e66a9",
+				x_axis_name : "",
+				y_axis_name : "",
+				x_division_no : "10",//"" means Number of data
+				y_division_no : "10",//"" means Number of data
+				path_no : 3,
+				main_title : true,
+				icon : true,
+				x_axis : true,
+				x_axis_division : false,
+				x_axis_title : true,
+				x_axis_label : true,
+				y_axis : false,
+				y_axis_division : true,
+				y_axis_title : true,
+				y_axis_label : true,
+				x_axis_hover_design : true,
+				y_axis_hover_design : false,
+				popup_design : true,
+				popup_footer_design : true,
+				select_area : true,
+			};
+			path_details = [{
+				name : "Normal",
+				color : "#770069",
+				type : ["line_area"],
+				stroke : [0],
+				circle : true,
+				circle_zoom_out : 0,
+				circle_zoom_in : 5,
+				label : true,
+			},{
+				name : "Warmest",
+				color : "#0e66a9",
+				type : ["round_path"],
+				stroke : [5],
+				circle : true,
+				circle_zoom_out : 2,
+				circle_zoom_in : 3,
+				label : false,
+			},{
+				name : "Coldest",
+				color : "#ff0000",
+				type : ["stepline_path"],
+				stroke : [0],
+				circle : true,
+				circle_zoom_out : 5,
+				circle_zoom_in : 7,
+				label : false,
+			}];
+			
+			check(data, instruction, path_details);			
+			
+			
+		}
+	</script>
+	<!--For menu-->
+	<script type ="text/javascript">
+		var allText = "";
+		function readTextFile(file)
+		{
+			var rawFile = new XMLHttpRequest();
+			rawFile.open("GET", file, false);
+			rawFile.onreadystatechange = function ()
+			{
+				if(rawFile.readyState === 4)
+				{
+					if(rawFile.status === 200 || rawFile.status == 0)
+					{        
+						allText = rawFile.responseText;
+					}
+				}
+			}
+			rawFile.send(null);
+		}
+		readTextFile("menu.html");
+		
+		document.getElementById('menu').innerHTML = allText;
+	</script>
+    </body>
+</html>

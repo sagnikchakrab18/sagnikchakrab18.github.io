@@ -1,0 +1,116 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+		<link rel="stylesheet" href="css/main.css" />
+		<script src="js/raphael.js"></script>
+		<script src="js/line.js"></script>	
+		
+			
+    </head>
+    <body>
+		
+	<div class="header">
+		<a href="index.html">
+			<h3>Charts</h3>
+		</a>
+	</div>
+	<div class="container">
+		<div class="inner-container" >
+			<div class="menu" id="menu">
+				
+			</div>
+			<div class="graph">
+				<div class="graph-header"><a href="area_negative.html">Area chart  &#187;  Area chart with Negative value</a></div>
+				<div class="inner-graph" id="cntnr1"></div>
+			</div>
+		</div>
+	</div>
+	<script>
+		window.onload = function(){			
+			var data = [
+				{ month : 'JAN', value : { a : 11, b : -15, } },{ month : 'FEB', value : { a : 0, b : 6, } },{ month : 'MAR', value : { a : 0, b : 0, } },{ month : 'APR', value : { a : 15, b : -3, } },{ month : 'MAY', value : { a : 46, b : 12, } },{ month : 'JUN', value : { a : 25, b : 12, } },{ month : 'JUL', value : { a : -6, b : -13, } },{ month : 'AUG', value : { a : 4, b : 6, } },{ month : 'SEP', value : { a : 26, b : 8, } },{ month : 'OCT', value : { a : 12, b : -18, } },{ month : 'NOV', value : { a : 5, b : 17, } },{ month : 'DEC', value : { a : 21, b : 1, } },
+			];
+			var instruction = {
+				id : "1st",
+				container : "cntnr1",
+				title : "Area chart with Negative value",
+				width : 950,
+				height : 510,
+				paddingx : 40,
+				paddingy : 40,
+				axis_color : "#bf0077",
+				x_axis_name : "Month",
+				y_axis_name : "",
+				x_division_no : "12",//"" means Number of data
+				y_division_no : "10",//"" means Number of data
+				path_no : 2,
+				main_title : true,
+				icon : true,
+				x_axis : true,
+				x_axis_division : false,
+				x_axis_title : true,
+				x_axis_label : true,
+				y_axis : false,
+				y_axis_division : true,
+				y_axis_title : true,
+				y_axis_label : true,
+				x_axis_hover_design : true,
+				y_axis_hover_design : true,
+				popup_design : true,
+				popup_footer_design : true,
+				select_area : true,
+			};
+			path_details = [{
+				name : "Normal",
+				color : "#007c00",
+				type : ["round_area","round_path"],
+				stroke : [0, 5],
+				circle : true,
+				circle_zoom_out : 0,
+				circle_zoom_in : 5,
+				label : true,
+			},{
+				name : "Coldest",
+				color : "#03a9f4",
+				type : ["round_area","round_path"],
+				stroke : [0, 5],
+				circle : true,
+				circle_zoom_out : 4,
+				circle_zoom_in : 5,
+				label : false,
+			}];
+			
+			check(data, instruction, path_details);			
+						
+		}
+	</script>
+	<!--For menu-->
+	<script type ="text/javascript">
+		var allText = "";
+		function readTextFile(file)
+		{
+			var rawFile = new XMLHttpRequest();
+			rawFile.open("GET", file, false);
+			rawFile.onreadystatechange = function ()
+			{
+				if(rawFile.readyState === 4)
+				{
+					if(rawFile.status === 200 || rawFile.status == 0)
+					{        
+						allText = rawFile.responseText;
+					}
+				}
+			}
+			rawFile.send(null);
+		}
+		readTextFile("menu.html");
+		
+		document.getElementById('menu').innerHTML = allText;
+	</script>
+    </body>
+</html>

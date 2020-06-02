@@ -1,0 +1,221 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+		<link rel="stylesheet" href="css/main.css" />
+		<script src="js/raphael.js"></script>
+		<script src="js/line.js"></script>	
+		<style type="text/css">
+			
+		</style>
+    </head>
+    <body>
+		
+	<div class="header">
+		<a href="index.html">
+			<h3>Charts</h3>
+		</a>
+	</div>
+	<div class="container">
+		<div class="inner-container" >
+			<div class="menu" id="menu">
+				
+			</div>
+			<div class="graph">
+				<div class="graph-header"><a href="line_syncing.html">Line chart  &#187;  Line Syncing chart</a></div>
+				<div class="graph-sync">
+					<div class="inner-graph-sync" id="cntnr1"></div>
+					<div class="inner-graph-sync" id="cntnr2"></div>
+					<div class="inner-graph-sync" id="cntnr3"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		window.onload = function(){			
+			var data = [
+				{ month : 'JAN', value : { a : 15, } },{ month : 'FEB', value : { a : 38, } },{ month : 'MAR', value : { a : 4, } },{ month : 'APR', value : { a : 28, } },{ month : 'MAY', value : { a : 31, } },{ month : 'JUN', value : { a : 14, } },{ month : 'JUL', value : { a : 27, } },{ month : 'AUG', value : { a : 48, } },{ month : 'SEP', value : { a : 11, } },{ month : 'OCT', value : { a : 28, } },{ month : 'NOV', value : { a : 32, } },{ month : 'DEC', value : { a : 25, } },
+				
+			];
+			var instruction = {
+				id : "1st",
+				sync_id : "oi",
+				container : "cntnr1",
+				title : "Line Syncing chart",
+				width : 950,
+				height : 220,
+				paddingx : 30,
+				paddingy : 30,
+				axis_color : "#0e66a9",
+				x_axis_name : "Month",
+				y_axis_name : "",
+				x_division_no : "12",//"" means Number of data
+				y_division_no : "4",//"" means Number of data
+				path_no : 1,
+				main_title : true,
+				main_title_position : "top-right",
+				icon : true,
+				icon_position : "bottom-middle",
+				x_axis : true,
+				x_axis_division : false,
+				x_axis_title : false,
+				x_axis_label : true,
+				y_axis : false,
+				y_axis_division : true,
+				y_axis_title : true,
+				y_axis_label : true,
+				x_axis_hover_design : true,
+				y_axis_hover_design : false,
+				popup_design : true,
+				popup_footer_design : true,
+				select_area : true,
+			};
+			path_details = [{
+				name : "Line",
+				color : "#0e66a9",
+				type : ["line_path"],
+				stroke : [ 5],
+				circle : true,
+				circle_zoom_out : 4,
+				circle_zoom_in : 5,
+				label : false,
+			}];
+			
+			check(data, instruction, path_details);			
+			
+			var data2 = [
+				{ month : 'JAN', value : { a : 4, } },{ month : 'FEB', value : { a : 30, } },{ month : 'MAR', value : { a : 7, } },{ month : 'APR', value : { a : 22, } },{ month : 'MAY', value : { a : 2, } },{ month : 'JUN', value : { a : 44, } },{ month : 'JUL', value : { a : 30, } },{ month : 'AUG', value : { a : 28, } },{ month : 'SEP', value : { a : 12, } },{ month : 'OCT', value : { a : 11, } },{ month : 'NOV', value : { a : 48, } },{ month : 'DEC', value : { a : 10, } },
+			];
+			var instruction2 = {
+				id : "2nd",
+				sync_id : "oi",
+				container : "cntnr2",
+				title : "Weather statistics for Jammu and Kashmir",
+				width : 950,
+				height : 220,
+				paddingx : 30,
+				paddingy : 30,
+				axis_color : "#007c00",
+				x_axis_name : "Month",
+				y_axis_name : "",
+				x_division_no : "12",//"" means Number of data
+				y_division_no : "4",//"" means Number of data
+				path_no : 1,
+				main_title : false,
+				icon : true,
+				icon_position : "bottom-middle",
+				x_axis : true,
+				x_axis_division : false,
+				x_axis_title : false,
+				x_axis_label : true,
+				y_axis : false,
+				y_axis_division : true,
+				y_axis_title : true,
+				y_axis_label : true,
+				x_axis_hover_design : true,
+				y_axis_hover_design : false,
+				popup_design : true,
+				popup_footer_design : true,
+				select_area : true,
+			};
+			path_detail2 = [{
+				name : "Round",
+				color : "#007c00",
+				type : ["round_path"],
+				stroke : [5],
+				circle : true,
+				circle_zoom_out : 0,
+				circle_zoom_in : 5,
+				label : true,
+			}];
+
+			check(data2, instruction2, path_detail2);		
+			
+			
+			var data3 = [
+				{ month : 'JAN', value : { a : 29, b : 61, } },{ month : 'FEB', value : { a : 41, b : 14, } },{ month : 'MAR', value : { a : 41, b : 50, } },{ month : 'APR', value : { a : 44, b : 68, } },{ month : 'MAY', value : { a : 26, b : 44, } },{ month : 'JUN', value : { a : 41, b : 67, } },{ month : 'JUL', value : { a : 29, b : 13, } },{ month : 'AUG', value : { a : 10, b : 66, } },{ month : 'SEP', value : { a : 26, b : 39, } },{ month : 'OCT', value : { a : 47, b : 55, } },{ month : 'NOV', value : { a : 33, b : 97, } },{ month : 'DEC', value : { a : 25, b : 87, } },
+			];
+			var instruction3 = {
+				id : "3rd",
+				sync_id : "oi",
+				container : "cntnr3",
+				title : "Weather statistics for Jammu and Kashmir",
+				width : 950,
+				height : 220,
+				paddingx : 30,
+				paddingy : 30,
+				axis_color : "#bf0077",
+				x_axis_name : "Month",
+				y_axis_name : "",
+				x_division_no : "12",//"" means Number of data
+				y_division_no : "4",//"" means Number of data
+				path_no : 2,
+				main_title : false,
+				icon : true,
+				icon_position : "bottom-middle",
+				x_axis : true,
+				x_axis_division : false,
+				x_axis_title : false,
+				x_axis_label : true,
+				y_axis : false,
+				y_axis_division : true,
+				y_axis_title : true,
+				y_axis_label : true,
+				x_axis_hover_design : true,
+				y_axis_hover_design : false,
+				popup_design : true,
+				popup_footer_design : true,
+				select_area : true,
+			};
+			path_detail3 = [{
+				name : "Round",
+				color : "#ff0000",
+				type : ["round_path"],
+				stroke : [5],
+				circle : true,
+				circle_zoom_out : 0,
+				circle_zoom_in : 5,
+				label : true,
+			},{
+				name : "Line",
+				color : "#bf0077",
+				type : ["line_path"],
+				stroke : [5],
+				circle : true,
+				circle_zoom_out : 4,
+				circle_zoom_in : 5,
+				label : false,
+			}];
+
+			check(data3, instruction3, path_detail3);	
+						
+		}
+	</script>
+	<!--For menu-->
+	<script type ="text/javascript">
+		var allText = "";
+		function readTextFile(file)
+		{
+			var rawFile = new XMLHttpRequest();
+			rawFile.open("GET", file, false);
+			rawFile.onreadystatechange = function ()
+			{
+				if(rawFile.readyState === 4)
+				{
+					if(rawFile.status === 200 || rawFile.status == 0)
+					{        
+						allText = rawFile.responseText;
+					}
+				}
+			}
+			rawFile.send(null);
+		}
+		readTextFile("menu.html");
+		
+		document.getElementById('menu').innerHTML = allText;
+	</script>
+    </body>
+</html>

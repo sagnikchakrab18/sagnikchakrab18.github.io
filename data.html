@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+		<link rel="stylesheet" href="css/main.css" />
+		<script src="js/raphael.js"></script>
+		<script src="js/line.js"></script>	
+		
+			
+    </head>
+    <body>
+	<div class="container">
+		<div class="inner-container" >
+			<div class="menu" id="menu">
+				
+			</div>
+			<div class="graph">
+				<div class="inner-graph" id="cntnr1"></div>
+			</div>
+		</div>
+	</div>
+	<script>
+		var month = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+		var day = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+		var s = "";
+		for(var i = 0; i<month.length; i++){
+			//for(var j = 1; j<=day[i] ; j++){
+				s += `{\n
+					
+					month : '${month[i]}',
+					value : {
+						a : ${Math.round(Math.random() * (50 - (-10)) + (-10))},
+						b : ${Math.round(Math.random() * (30 - (-20)) + (-20))},
+					}
+				},`;
+			//}
+		}
+		/*for(var i = 1; i<=31 ; i++){
+			s += `{\n
+					month : '${i} ,JAN',
+					value : {
+						a : ${Math.round(Math.random() * (100 - 50) + 50)},
+						b : ${Math.round(Math.random() * (150 - 40) + 40)},
+						c : ${Math.round(Math.random() * (50 - 25) + 25)},
+					}
+				},`;
+		}
+		/*for(var i = 1; i<=28 ; i++){
+			s += `{\n
+					month : '${i} ,FEB',
+					value : {
+						a : ${Math.round(Math.random() * (170 - 150) + 150)},
+					}
+				},`;
+		}
+		for(var i = 1; i<=31 ; i++){
+			s += `{\n
+					month : '${i} ,MAR',
+					value : {
+						a : ${Math.round(Math.random() * (200 - 180) + 180)},
+					}
+				},`;
+		}
+		for(var i = 1; i<=30 ; i++){
+			s += `{\n
+					month : '${i} ,APR',
+					value : {
+						a : ${Math.round(Math.random() * (205 - 190) + 190)},
+					}
+				},`;
+		}
+		for(var i = 1; i<=31 ; i++){
+			s += `{\n
+					month : '${i} ,MAY',
+					value : {
+						a : ${Math.round(Math.random() * (215 - 200) + 200)},
+					}
+				},`;
+		}
+		for(var i = 1; i<=30 ; i++){
+			s += `{\n
+					month : '${i} ,JUN',
+					value : {
+						a : ${Math.round(Math.random() * (230 - 210) + 210)},
+					}
+				},`;
+		}
+		for(var i = 1; i<=31 ; i++){
+			s += `{\n
+					month : '${i} ,JUL',
+					value : {
+						a : ${Math.round(Math.random() * (220 - 195) + 195)},
+					}
+				},`;
+		}
+		for(var i = 1; i<=31 ; i++){
+			s += `{\n
+					month : '${i} ,AUG',
+					value : {
+						a : ${Math.round(Math.random() * (235 - 210) + 210)},
+					}
+				},`;
+		}
+		for(var i = 1; i<=30 ; i++){
+			s += `{\n
+					month : '${i} ,SEP',
+					value : {
+						a : ${Math.round(Math.random() * (245 - 225) + 225)},
+					}
+				},`;
+		}
+		for(var i = 1; i<=31 ; i++){
+			s += `{\n
+					month : '${i} ,OCT',
+					value : {
+						a : ${Math.round(Math.random() * (230 - 200) + 200)},
+					}
+				},`;
+		}
+		for(var i = 1; i<=30 ; i++){
+			s += `{\n
+					month : '${i} ,NOV',
+					value : {
+						a : ${Math.round(Math.random() * (210 - 180) + 180)},
+					}
+				},`;
+		}
+		for(var i = 1; i<=31 ; i++){
+			s += `{\n
+					month : '${i} ,DEC',
+					value : {
+						a : ${Math.round(Math.random() * (220 - 180) + 180)},
+					}
+				},`;
+		}*/
+		document.getElementById('cntnr1').innerHTML = s;
+	</script>
+	
+	</script>
+    </body>
+</html>

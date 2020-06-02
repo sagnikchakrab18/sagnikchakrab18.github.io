@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+		<link rel="stylesheet" href="css/main.css" />
+		<script src="js/raphael.js"></script>
+		<script src="js/line.js"></script>	
+		
+			
+    </head>
+    <body>
+		
+	<div class="header">
+		<a href="index.html">
+			<h3>Charts</h3>
+		</a>
+	</div>
+	<div class="container">
+		<div class="inner-container" >
+			<div class="menu" id="menu">
+				
+			</div>
+			<div class="graph">
+				<div class="graph-header"><a href="line_zoomable.html">Line chart  &#187;  Zoomable Line chart</a></div>
+				<div class="inner-graph" id="cntnr1"></div> 
+			</div>
+		</div>
+	</div>
+	<script>
+		window.onload = function(){			
+			var data = [
+				{ month : '1 ,JAN', value : { a : 40, } },{ month : '2 ,JAN', value : { a : 31, } },{ month : '3 ,JAN', value : { a : 49, } },{ month : '4 ,JAN', value : { a : 34, } },{ month : '5 ,JAN', value : { a : 40, } },{ month : '6 ,JAN', value : { a : 31, } },{ month : '7 ,JAN', value : { a : 38, } },{ month : '8 ,JAN', value : { a : 49, } },{ month : '9 ,JAN', value : { a : 46, } },{ month : '10 ,JAN', value : { a : 41, } },{ month : '11 ,JAN', value : { a : 46, } },{ month : '12 ,JAN', value : { a : 48, } },{ month : '13 ,JAN', value : { a : 31, } },{ month : '14 ,JAN', value : { a : 48, } },{ month : '15 ,JAN', value : { a : 40, } },{ month : '16 ,JAN', value : { a : 43, } },{ month : '17 ,JAN', value : { a : 47, } },{ month : '18 ,JAN', value : { a : 31, } },{ month : '19 ,JAN', value : { a : 43, } },{ month : '20 ,JAN', value : { a : 40, } },{ month : '21 ,JAN', value : { a : 42, } },{ month : '22 ,JAN', value : { a : 38, } },{ month : '23 ,JAN', value : { a : 36, } },{ month : '24 ,JAN', value : { a : 39, } },{ month : '25 ,JAN', value : { a : 36, } },{ month : '26 ,JAN', value : { a : 33, } },{ month : '27 ,JAN', value : { a : 45, } },{ month : '28 ,JAN', value : { a : 49, } },{ month : '29 ,JAN', value : { a : 47, } },{ month : '30 ,JAN', value : { a : 48, } },{ month : '31 ,JAN', value : { a : 42, } },{ month : '1 ,FEB', value : { a : 59, } },{ month : '2 ,FEB', value : { a : 57, } },{ month : '3 ,FEB', value : { a : 50, } },{ month : '4 ,FEB', value : { a : 66, } },{ month : '5 ,FEB', value : { a : 67, } },{ month : '6 ,FEB', value : { a : 67, } },{ month : '7 ,FEB', value : { a : 63, } },{ month : '8 ,FEB', value : { a : 50, } },{ month : '9 ,FEB', value : { a : 63, } },{ month : '10 ,FEB', value : { a : 61, } },{ month : '11 ,FEB', value : { a : 62, } },{ month : '12 ,FEB', value : { a : 54, } },{ month : '13 ,FEB', value : { a : 61, } },{ month : '14 ,FEB', value : { a : 66, } },{ month : '15 ,FEB', value : { a : 53, } },{ month : '16 ,FEB', value : { a : 69, } },{ month : '17 ,FEB', value : { a : 69, } },{ month : '18 ,FEB', value : { a : 68, } },{ month : '19 ,FEB', value : { a : 59, } },{ month : '20 ,FEB', value : { a : 53, } },{ month : '21 ,FEB', value : { a : 66, } },{ month : '22 ,FEB', value : { a : 52, } },{ month : '23 ,FEB', value : { a : 64, } },{ month : '24 ,FEB', value : { a : 51, } },{ month : '25 ,FEB', value : { a : 51, } },{ month : '26 ,FEB', value : { a : 70, } },{ month : '27 ,FEB', value : { a : 68, } },{ month : '28 ,FEB', value : { a : 60, } },{ month : '1 ,MAR', value : { a : 97, } },{ month : '2 ,MAR', value : { a : 94, } },{ month : '3 ,MAR', value : { a : 93, } },{ month : '4 ,MAR', value : { a : 99, } },{ month : '5 ,MAR', value : { a : 87, } },{ month : '6 ,MAR', value : { a : 82, } },{ month : '7 ,MAR', value : { a : 98, } },{ month : '8 ,MAR', value : { a : 80, } },{ month : '9 ,MAR', value : { a : 90, } },{ month : '10 ,MAR', value : { a : 86, } },{ month : '11 ,MAR', value : { a : 92, } },{ month : '12 ,MAR', value : { a : 92, } },{ month : '13 ,MAR', value : { a : 86, } },{ month : '14 ,MAR', value : { a : 87, } },{ month : '15 ,MAR', value : { a : 100, } },{ month : '16 ,MAR', value : { a : 100, } },{ month : '17 ,MAR', value : { a : 81, } },{ month : '18 ,MAR', value : { a : 94, } },{ month : '19 ,MAR', value : { a : 82, } },{ month : '20 ,MAR', value : { a : 81, } },{ month : '21 ,MAR', value : { a : 99, } },{ month : '22 ,MAR', value : { a : 92, } },{ month : '23 ,MAR', value : { a : 83, } },{ month : '24 ,MAR', value : { a : 95, } },{ month : '25 ,MAR', value : { a : 93, } },{ month : '26 ,MAR', value : { a : 86, } },{ month : '27 ,MAR', value : { a : 89, } },{ month : '28 ,MAR', value : { a : 87, } },{ month : '29 ,MAR', value : { a : 92, } },{ month : '30 ,MAR', value : { a : 85, } },{ month : '31 ,MAR', value : { a : 87, } },{ month : '1 ,APR', value : { a : 99, } },{ month : '2 ,APR', value : { a : 93, } },{ month : '3 ,APR', value : { a : 101, } },{ month : '4 ,APR', value : { a : 102, } },{ month : '5 ,APR', value : { a : 98, } },{ month : '6 ,APR', value : { a : 97, } },{ month : '7 ,APR', value : { a : 104, } },{ month : '8 ,APR', value : { a : 92, } },{ month : '9 ,APR', value : { a : 105, } },{ month : '10 ,APR', value : { a : 102, } },{ month : '11 ,APR', value : { a : 91, } },{ month : '12 ,APR', value : { a : 98, } },{ month : '13 ,APR', value : { a : 101, } },{ month : '14 ,APR', value : { a : 99, } },{ month : '15 ,APR', value : { a : 90, } },{ month : '16 ,APR', value : { a : 104, } },{ month : '17 ,APR', value : { a : 93, } },{ month : '18 ,APR', value : { a : 97, } },{ month : '19 ,APR', value : { a : 103, } },{ month : '20 ,APR', value : { a : 91, } },{ month : '21 ,APR', value : { a : 96, } },{ month : '22 ,APR', value : { a : 96, } },{ month : '23 ,APR', value : { a : 98, } },{ month : '24 ,APR', value : { a : 101, } },{ month : '25 ,APR', value : { a : 93, } },{ month : '26 ,APR', value : { a : 100, } },{ month : '27 ,APR', value : { a : 94, } },{ month : '28 ,APR', value : { a : 97, } },{ month : '29 ,APR', value : { a : 101, } },{ month : '30 ,APR', value : { a : 95, } },{ month : '1 ,MAY', value : { a : 110, } },{ month : '2 ,MAY', value : { a : 107, } },{ month : '3 ,MAY', value : { a : 105, } },{ month : '4 ,MAY', value : { a : 112, } },{ month : '5 ,MAY', value : { a : 109, } },{ month : '6 ,MAY', value : { a : 108, } },{ month : '7 ,MAY', value : { a : 115, } },{ month : '8 ,MAY', value : { a : 114, } },{ month : '9 ,MAY', value : { a : 109, } },{ month : '10 ,MAY', value : { a : 109, } },{ month : '11 ,MAY', value : { a : 111, } },{ month : '12 ,MAY', value : { a : 115, } },{ month : '13 ,MAY', value : { a : 115, } },{ month : '14 ,MAY', value : { a : 110, } },{ month : '15 ,MAY', value : { a : 108, } },{ month : '16 ,MAY', value : { a : 110, } },{ month : '17 ,MAY', value : { a : 109, } },{ month : '18 ,MAY', value : { a : 106, } },{ month : '19 ,MAY', value : { a : 109, } },{ month : '20 ,MAY', value : { a : 115, } },{ month : '21 ,MAY', value : { a : 102, } },{ month : '22 ,MAY', value : { a : 106, } },{ month : '23 ,MAY', value : { a : 110, } },{ month : '24 ,MAY', value : { a : 114, } },{ month : '25 ,MAY', value : { a : 110, } },{ month : '26 ,MAY', value : { a : 106, } },{ month : '27 ,MAY', value : { a : 112, } },{ month : '28 ,MAY', value : { a : 106, } },{ month : '29 ,MAY', value : { a : 114, } },{ month : '30 ,MAY', value : { a : 108, } },{ month : '31 ,MAY', value : { a : 109, } },{ month : '1 ,JUN', value : { a : 112, } },{ month : '2 ,JUN', value : { a : 122, } },{ month : '3 ,JUN', value : { a : 125, } },{ month : '4 ,JUN', value : { a : 112, } },{ month : '5 ,JUN', value : { a : 119, } },{ month : '6 ,JUN', value : { a : 118, } },{ month : '7 ,JUN', value : { a : 126, } },{ month : '8 ,JUN', value : { a : 126, } },{ month : '9 ,JUN', value : { a : 128, } },{ month : '10 ,JUN', value : { a : 120, } },{ month : '11 ,JUN', value : { a : 124, } },{ month : '12 ,JUN', value : { a : 119, } },{ month : '13 ,JUN', value : { a : 111, } },{ month : '14 ,JUN', value : { a : 123, } },{ month : '15 ,JUN', value : { a : 125, } },{ month : '16 ,JUN', value : { a : 116, } },{ month : '17 ,JUN', value : { a : 129, } },{ month : '18 ,JUN', value : { a : 128, } },{ month : '19 ,JUN', value : { a : 114, } },{ month : '20 ,JUN', value : { a : 117, } },{ month : '21 ,JUN', value : { a : 120, } },{ month : '22 ,JUN', value : { a : 123, } },{ month : '23 ,JUN', value : { a : 119, } },{ month : '24 ,JUN', value : { a : 130, } },{ month : '25 ,JUN', value : { a : 123, } },{ month : '26 ,JUN', value : { a : 116, } },{ month : '27 ,JUN', value : { a : 127, } },{ month : '28 ,JUN', value : { a : 116, } },{ month : '29 ,JUN', value : { a : 117, } },{ month : '30 ,JUN', value : { a : 112, } },{ month : '1 ,JUL', value : { a : 97, } },{ month : '2 ,JUL', value : { a : 107, } },{ month : '3 ,JUL', value : { a : 105, } },{ month : '4 ,JUL', value : { a : 118, } },{ month : '5 ,JUL', value : { a : 115, } },{ month : '6 ,JUL', value : { a : 101, } },{ month : '7 ,JUL', value : { a : 117, } },{ month : '8 ,JUL', value : { a : 98, } },{ month : '9 ,JUL', value : { a : 117, } },{ month : '10 ,JUL', value : { a : 99, } },{ month : '11 ,JUL', value : { a : 104, } },{ month : '12 ,JUL', value : { a : 98, } },{ month : '13 ,JUL', value : { a : 117, } },{ month : '14 ,JUL', value : { a : 114, } },{ month : '15 ,JUL', value : { a : 115, } },{ month : '16 ,JUL', value : { a : 102, } },{ month : '17 ,JUL', value : { a : 99, } },{ month : '18 ,JUL', value : { a : 97, } },{ month : '19 ,JUL', value : { a : 112, } },{ month : '20 ,JUL', value : { a : 107, } },{ month : '21 ,JUL', value : { a : 106, } },{ month : '22 ,JUL', value : { a : 117, } },{ month : '23 ,JUL', value : { a : 106, } },{ month : '24 ,JUL', value : { a : 109, } },{ month : '25 ,JUL', value : { a : 101, } },{ month : '26 ,JUL', value : { a : 109, } },{ month : '27 ,JUL', value : { a : 106, } },{ month : '28 ,JUL', value : { a : 105, } },{ month : '29 ,JUL', value : { a : 117, } },{ month : '30 ,JUL', value : { a : 105, } },{ month : '31 ,JUL', value : { a : 119, } },{ month : '1 ,AUG', value : { a : 127, } },{ month : '2 ,AUG', value : { a : 113, } },{ month : '3 ,AUG', value : { a : 122, } },{ month : '4 ,AUG', value : { a : 133, } },{ month : '5 ,AUG', value : { a : 134, } },{ month : '6 ,AUG', value : { a : 134, } },{ month : '7 ,AUG', value : { a : 120, } },{ month : '8 ,AUG', value : { a : 131, } },{ month : '9 ,AUG', value : { a : 124, } },{ month : '10 ,AUG', value : { a : 116, } },{ month : '11 ,AUG', value : { a : 111, } },{ month : '12 ,AUG', value : { a : 122, } },{ month : '13 ,AUG', value : { a : 115, } },{ month : '14 ,AUG', value : { a : 124, } },{ month : '15 ,AUG', value : { a : 126, } },{ month : '16 ,AUG', value : { a : 128, } },{ month : '17 ,AUG', value : { a : 131, } },{ month : '18 ,AUG', value : { a : 133, } },{ month : '19 ,AUG', value : { a : 111, } },{ month : '20 ,AUG', value : { a : 131, } },{ month : '21 ,AUG', value : { a : 132, } },{ month : '22 ,AUG', value : { a : 126, } },{ month : '23 ,AUG', value : { a : 126, } },{ month : '24 ,AUG', value : { a : 117, } },{ month : '25 ,AUG', value : { a : 132, } },{ month : '26 ,AUG', value : { a : 132, } },{ month : '27 ,AUG', value : { a : 111, } },{ month : '28 ,AUG', value : { a : 126, } },{ month : '29 ,AUG', value : { a : 133, } },{ month : '30 ,AUG', value : { a : 113, } },{ month : '31 ,AUG', value : { a : 121, } },{ month : '1 ,SEP', value : { a : 141, } },{ month : '2 ,SEP', value : { a : 135, } },{ month : '3 ,SEP', value : { a : 134, } },{ month : '4 ,SEP', value : { a : 128, } },{ month : '5 ,SEP', value : { a : 139, } },{ month : '6 ,SEP', value : { a : 133, } },{ month : '7 ,SEP', value : { a : 139, } },{ month : '8 ,SEP', value : { a : 133, } },{ month : '9 ,SEP', value : { a : 142, } },{ month : '10 ,SEP', value : { a : 128, } },{ month : '11 ,SEP', value : { a : 144, } },{ month : '12 ,SEP', value : { a : 137, } },{ month : '13 ,SEP', value : { a : 131, } },{ month : '14 ,SEP', value : { a : 136, } },{ month : '15 ,SEP', value : { a : 143, } },{ month : '16 ,SEP', value : { a : 141, } },{ month : '17 ,SEP', value : { a : 139, } },{ month : '18 ,SEP', value : { a : 134, } },{ month : '19 ,SEP', value : { a : 143, } },{ month : '20 ,SEP', value : { a : 127, } },{ month : '21 ,SEP', value : { a : 130, } },{ month : '22 ,SEP', value : { a : 142, } },{ month : '23 ,SEP', value : { a : 142, } },{ month : '24 ,SEP', value : { a : 137, } },{ month : '25 ,SEP', value : { a : 129, } },{ month : '26 ,SEP', value : { a : 136, } },{ month : '27 ,SEP', value : { a : 134, } },{ month : '28 ,SEP', value : { a : 143, } },{ month : '29 ,SEP', value : { a : 125, } },{ month : '30 ,SEP', value : { a : 133, } },{ month : '1 ,OCT', value : { a : 116, } },{ month : '2 ,OCT', value : { a : 118, } },{ month : '3 ,OCT', value : { a : 109, } },{ month : '4 ,OCT', value : { a : 117, } },{ month : '5 ,OCT', value : { a : 121, } },{ month : '6 ,OCT', value : { a : 105, } },{ month : '7 ,OCT', value : { a : 100, } },{ month : '8 ,OCT', value : { a : 115, } },{ month : '9 ,OCT', value : { a : 101, } },{ month : '10 ,OCT', value : { a : 112, } },{ month : '11 ,OCT', value : { a : 113, } },{ month : '12 ,OCT', value : { a : 108, } },{ month : '13 ,OCT', value : { a : 118, } },{ month : '14 ,OCT', value : { a : 115, } },{ month : '15 ,OCT', value : { a : 120, } },{ month : '16 ,OCT', value : { a : 111, } },{ month : '17 ,OCT', value : { a : 117, } },{ month : '18 ,OCT', value : { a : 103, } },{ month : '19 ,OCT', value : { a : 117, } },{ month : '20 ,OCT', value : { a : 110, } },{ month : '21 ,OCT', value : { a : 123, } },{ month : '22 ,OCT', value : { a : 121, } },{ month : '23 ,OCT', value : { a : 109, } },{ month : '24 ,OCT', value : { a : 112, } },{ month : '25 ,OCT', value : { a : 105, } },{ month : '26 ,OCT', value : { a : 115, } },{ month : '27 ,OCT', value : { a : 105, } },{ month : '28 ,OCT', value : { a : 104, } },{ month : '29 ,OCT', value : { a : 102, } },{ month : '30 ,OCT', value : { a : 120, } },{ month : '31 ,OCT', value : { a : 111, } },{ month : '1 ,NOV', value : { a : 95, } },{ month : '2 ,NOV', value : { a : 86, } },{ month : '3 ,NOV', value : { a : 88, } },{ month : '4 ,NOV', value : { a : 100, } },{ month : '5 ,NOV', value : { a : 88, } },{ month : '6 ,NOV', value : { a : 96, } },{ month : '7 ,NOV', value : { a : 91, } },{ month : '8 ,NOV', value : { a : 98, } },{ month : '9 ,NOV', value : { a : 89, } },{ month : '10 ,NOV', value : { a : 103, } },{ month : '11 ,NOV', value : { a : 86, } },{ month : '12 ,NOV', value : { a : 106, } },{ month : '13 ,NOV', value : { a : 106, } },{ month : '14 ,NOV', value : { a : 92, } },{ month : '15 ,NOV', value : { a : 82, } },{ month : '16 ,NOV', value : { a : 83, } },{ month : '17 ,NOV', value : { a : 100, } },{ month : '18 ,NOV', value : { a : 92, } },{ month : '19 ,NOV', value : { a : 91, } },{ month : '20 ,NOV', value : { a : 96, } },{ month : '21 ,NOV', value : { a : 84, } },{ month : '22 ,NOV', value : { a : 96, } },{ month : '23 ,NOV', value : { a : 87, } },{ month : '24 ,NOV', value : { a : 93, } },{ month : '25 ,NOV', value : { a : 91, } },{ month : '26 ,NOV', value : { a : 88, } },{ month : '27 ,NOV', value : { a : 110, } },{ month : '28 ,NOV', value : { a : 91, } },{ month : '29 ,NOV', value : { a : 87, } },{ month : '30 ,NOV', value : { a : 82, } },{ month : '1 ,DEC', value : { a : 89, } },{ month : '2 ,DEC', value : { a : 93, } },{ month : '3 ,DEC', value : { a : 108, } },{ month : '4 ,DEC', value : { a : 95, } },{ month : '5 ,DEC', value : { a : 120, } },{ month : '6 ,DEC', value : { a : 96, } },{ month : '7 ,DEC', value : { a : 100, } },{ month : '8 ,DEC', value : { a : 108, } },{ month : '9 ,DEC', value : { a : 92, } },{ month : '10 ,DEC', value : { a : 85, } },{ month : '11 ,DEC', value : { a : 109, } },{ month : '12 ,DEC', value : { a : 118, } },{ month : '13 ,DEC', value : { a : 96, } },{ month : '14 ,DEC', value : { a : 98, } },{ month : '15 ,DEC', value : { a : 80, } },{ month : '16 ,DEC', value : { a : 110, } },{ month : '17 ,DEC', value : { a : 90, } },{ month : '18 ,DEC', value : { a : 87, } },{ month : '19 ,DEC', value : { a : 97, } },{ month : '20 ,DEC', value : { a : 100, } },{ month : '21 ,DEC', value : { a : 102, } },{ month : '22 ,DEC', value : { a : 119, } },{ month : '23 ,DEC', value : { a : 96, } },{ month : '24 ,DEC', value : { a : 117, } },{ month : '25 ,DEC', value : { a : 111, } },{ month : '26 ,DEC', value : { a : 109, } },{ month : '27 ,DEC', value : { a : 109, } },{ month : '28 ,DEC', value : { a : 85, } },{ month : '29 ,DEC', value : { a : 85, } },{ month : '30 ,DEC', value : { a : 80, } },{ month : '31 ,DEC', value : { a : 103, } }
+			];
+			var instruction = {
+				id : "1st",
+				container : "cntnr1",
+				title : "Product Trends by Year",
+				width : 950,
+				height : 510,
+				paddingx : 40,
+				paddingy : 40,
+				axis_color : "#0e66a9",
+				x_axis_name : "Month",
+				y_axis_name : "",
+				x_division_no : "12",//"" means Number of data
+				y_division_no : "10",//"" means Number of data
+				path_no : 1,
+				main_title : true,
+				main_title_position : "top-middle",
+				main_title_color : "#0e66a9",
+				main_title_font_size : "15px",
+				icon : true,
+				x_axis : true,
+				x_axis_division : false,
+				x_axis_title : true,
+				x_axis_label : true,
+				y_axis : false,
+				y_axis_division : true,
+				y_axis_title : true,
+				y_axis_label : true,
+				x_axis_hover_design : true,
+				y_axis_hover_design : false,
+				popup_design : true,
+				popup_footer_design : true,
+				select_area : true,
+			};
+			path_details = [{
+				name : "Laptop",
+				color : "#0e66a9",
+				type : ["line_path"],
+				stroke : [1.5],
+				circle : true,
+				circle_zoom_out : 0,
+				circle_zoom_in : 5,
+				label : false,
+			}];
+			
+			
+			check(data, instruction, path_details);			
+								
+		}
+	</script>
+	<!--For menu-->
+	<script type ="text/javascript">
+		var allText = "";
+		function readTextFile(file)
+		{
+			var rawFile = new XMLHttpRequest();
+			rawFile.open("GET", file, false);
+			rawFile.onreadystatechange = function ()
+			{
+				if(rawFile.readyState === 4)
+				{
+					if(rawFile.status === 200 || rawFile.status == 0)
+					{        
+						allText = rawFile.responseText;
+					}
+				}
+			}
+			rawFile.send(null);
+		}
+		readTextFile("menu.html");
+		
+		document.getElementById('menu').innerHTML = allText;
+	</script>
+    </body>
+</html>

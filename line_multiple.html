@@ -1,0 +1,125 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+		<link rel="stylesheet" href="css/main.css" />
+		<script src="js/raphael.js"></script>
+		<script src="js/line.js"></script>	
+		
+			
+    </head>
+    <body>
+		
+	<div class="header">
+		<a href="index.html">
+			<h3>Charts</h3>
+		</a>
+	</div>
+	<div class="container">
+		<div class="inner-container" >
+			<div class="menu" id="menu">
+				
+			</div>
+			<div class="graph">
+				<div class="graph-header"><a href="line_multiple.html">Line chart  &#187;  Multiple Line chart with Data labels</a></div>
+				<div class="inner-graph" id="cntnr1"></div>
+			</div>
+		</div>
+	</div>
+	<script>
+		window.onload = function(){			
+			var data = [{ month : 'JAN', value : { a : 2.5, b : 7.0, c : -2.0, } },{ month : 'FEB', value : { a : 3.8, b : 8.2, c : 3.4, } },{ month : 'MAR', value : { a : 8.8, b : 14.1, c : -0.7, } },{ month : 'APR', value : { a : 14.2, b : 20.5, c : 7.9, } },{ month : 'MAY', value : { a : 17.7, b : 24.5, c : 10.8, } },{ month : 'JUN', value : { a : 22.3, b : 29.6, c : 14.9, } },{ month : 'JUL', value : { a : 24.1, b : 30.1, c : 18.1, } },{ month : 'AUG', value : { a : 23.5, b : 29.6, c : 17.5, } },{ month : 'SEP', value : { a : 19.8, b : 27.4, c : 12.1, } },{ month : 'OCT', value : { a : 14.1, b : 22.4, c : 5.8, } },{ month : 'NOV', value : { a : 8.1, b : 15.1, c : 0.9, } },{ month : 'DEC', value : { a : 3.4, b : 8.2, c : -1.5, } }
+			];
+			var instruction = {
+				id : "1st",
+				container : "cntnr1",
+				title : "Weather statistics for Jammu and Kashmir",
+				width : 950,
+				height : 510,
+				paddingx : 40,
+				paddingy : 40,
+				axis_color : "#0e66a9",
+				x_axis_name : "Month",
+				y_axis_name : "",
+				x_division_no : "10",//"" means Number of data
+				y_division_no : "10",//"" means Number of data
+				path_no : 3,
+				main_title : true,
+				icon : true,
+				icon_position : "bottom-middle",
+				x_axis : true,
+				x_axis_division : false,
+				x_axis_title : false,
+				x_axis_label : true,
+				y_axis : false,
+				y_axis_division : true,
+				y_axis_position : "right",
+				y_axis_title : false,
+				y_axis_label : true,
+				x_axis_hover_design : true,
+				y_axis_hover_design : true,
+				popup_design : true,
+				popup_footer_design : true,
+				select_area : true,
+			};
+			path_details = [{
+				name : "Normal",
+				color : "#0e66a9",
+				type : ["line_path"],
+				stroke : [ 5],
+				circle : true,
+				circle_zoom_out : 0,
+				circle_zoom_in : 5,
+				label : true,
+			},{
+				name : "Warmest",
+				color : "#ff9800",
+				type : ["line_path"],
+				stroke : [ 5],
+				circle : true,
+				circle_zoom_out : 0,
+				circle_zoom_in : 5,
+				label : true,
+			},{
+				name : "Coldest",
+				color : "#03a9f4",
+				type : ["line_path"],
+				stroke : [5],
+				circle : true,
+				circle_zoom_out : 0,
+				circle_zoom_in : 5,
+				label : true,
+			}];
+			
+			check(data, instruction, path_details);			
+						
+		}
+	</script>
+	<!--For menu-->
+	<script type ="text/javascript">
+		var allText = "";
+		function readTextFile(file)
+		{
+			var rawFile = new XMLHttpRequest();
+			rawFile.open("GET", file, false);
+			rawFile.onreadystatechange = function ()
+			{
+				if(rawFile.readyState === 4)
+				{
+					if(rawFile.status === 200 || rawFile.status == 0)
+					{        
+						allText = rawFile.responseText;
+					}
+				}
+			}
+			rawFile.send(null);
+		}
+		readTextFile("menu.html");
+		
+		document.getElementById('menu').innerHTML = allText;
+	</script>
+    </body>
+</html>

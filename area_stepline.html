@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+		<link rel="stylesheet" href="css/main.css" />
+		<script src="js/raphael.js"></script>
+		<script src="js/line.js"></script>	
+		
+			
+    </head>
+    <body>
+		
+	<div class="header">
+		<a href="index.html">
+			<h3>Charts</h3>
+		</a>
+	</div>
+	<div class="container">
+		<div class="inner-container" >
+			<div class="menu" id="menu">
+				
+			</div>
+			<div class="graph">
+				<div class="graph-header"><a href="area_stepline.html">Area chart  &#187;  Stepline Area chart</a></div>
+				<div class="inner-graph" id="cntnr1"></div>
+			</div>
+		</div>
+	</div>
+	<script>
+		window.onload = function(){			
+			var data = [
+				{ month : '1 ,JAN', value : { a : 13, } },{ month : '2 ,JAN', value : { a : 24, } },{ month : '3 ,JAN', value : { a : 34, } },{ month : '4 ,JAN', value : { a : 15, } },{ month : '5 ,JAN', value : { a : 38, } },{ month : '6 ,JAN', value : { a : 34, } },{ month : '7 ,JAN', value : { a : 42, } },{ month : '8 ,JAN', value : { a : 25, } },{ month : '9 ,JAN', value : { a : 31, } },{ month : '10 ,JAN', value : { a : 22, } },{ month : '11 ,JAN', value : { a : 39, } },{ month : '12 ,JAN', value : { a : 26, } },{ month : '13 ,JAN', value : { a : 29, } },{ month : '14 ,JAN', value : { a : 30, } },{ month : '15 ,JAN', value : { a : 11, } },{ month : '16 ,JAN', value : { a : 5, } },{ month : '17 ,JAN', value : { a : 19, } },{ month : '18 ,JAN', value : { a : 13, } },
+			];
+			var instruction = {
+				id : "1st",
+				container : "cntnr1",
+				title : "Product Trends by Month",
+				width : 950,
+				height : 510,
+				paddingx : 40,
+				paddingy : 40,
+				axis_color : "#0e66a9",
+				x_axis_name : "Month",
+				y_axis_name : "",
+				x_division_no : "12",//"" means Number of data
+				y_division_no : "8",//"" means Number of data
+				path_no : 1,
+				main_title : true,
+				main_title_position : "bottom-middle",
+				icon : true,
+				x_axis : true,
+				x_axis_position : "top",
+				x_axis_division : false,
+				x_axis_title : true,
+				x_axis_label : true,
+				y_axis : false,
+				y_axis_division : true,
+				y_axis_title : true,
+				y_axis_label : true,
+				x_axis_hover_design : true,
+				y_axis_hover_design : true,
+				popup_design : true,
+				popup_footer_design : true,
+				select_area : true,
+			};
+			path_details = [{
+				name : "Laptop",
+				color : "#9e003d",
+				type : ["stepline_area","stepline_path"],
+				stroke : [0, 5],
+				circle : true,
+				circle_zoom_out : 0,
+				circle_zoom_in : 5,
+				label : false,
+			}];
+			
+			check(data, instruction, path_details);			
+			
+		}
+	</script>
+	<!--For menu-->
+	<script type ="text/javascript">
+		var allText = "";
+		function readTextFile(file)
+		{
+			var rawFile = new XMLHttpRequest();
+			rawFile.open("GET", file, false);
+			rawFile.onreadystatechange = function ()
+			{
+				if(rawFile.readyState === 4)
+				{
+					if(rawFile.status === 200 || rawFile.status == 0)
+					{        
+						allText = rawFile.responseText;
+					}
+				}
+			}
+			rawFile.send(null);
+		}
+		readTextFile("menu.html");
+		
+		document.getElementById('menu').innerHTML = allText;
+	</script>
+    </body>
+</html>
